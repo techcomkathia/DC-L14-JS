@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aula 02</h1>
+    <h2>Listas Não Ordenadas</h2>
+
+    <p>
+        Listas não ordenadas são usadas para criar uma lista de itens sem ordem, marcados com um ponto, uma linha ou um quadrado.
+    </p>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h2>Listas Ordenadas</h2>
+
+    <p>
+        Listas ordenadas são usadas para criar uma lista de itens com uma ordem específica, numerados ou marcados com letras.
+    </p>
+
+    <ol>
+        <li>Primeiro item</li>
+        <!--<li>Novo item adicionado</li> -->
+        <li>Segundo item</li>
+        <li>Terceiro item</li>
+    </ol>
+
+    <h3>Atributo Type</h3>
+
+    <p>
+        O atributo type é usado para especificar o tipo de marcador em uma lista ordenada. Ele pode ser usado para criar listas numeradas, listas com letras ou listas com números romanos.
+    </p>
+
+    <!-- o valor 1 é o padrao do atributo, informando ou não, será o mesmo efeito -->
+
+    <ol type="1">
+        <li>Coisa 1</li>
+        <li>Coisa 2</li>
+        <li>Coisa 3</li>
+    </ol>
+
+    <ol type="a">
+        <li>Coisa 1</li>
+        <li>Coisa 2</li>
+        <li>Coisa 3</li>
+    </ol>
+
+    <ol type="A">
+        <li>Coisa 1</li>
+        <li>Coisa 2</li>
+        <li>Coisa 3</li>
+    </ol>
+
+    <ol type="i">
+        <li>Coisa 1</li>
+        <li>Coisa 2</li>
+        <li>Coisa 3</li>
+    </ol>
+
+    <ol type="I">
+        <li>Coisa 1</li>
+        <li>Coisa 2</li>
+        <li>Coisa 3</li>
+    </ol>
+
+
+    <h3>Atributo Start</h3>
+
+    <p>O atributo start é usado para especificar o número inicial de uma lista ordenada.</p>
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non provident, quaerat facilis ad laudantium sed ab excepturi fugit officia minima! A lista deve continuar sendo numerada a partir do 3.</p>
+
+    <ol start="3">
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+
+    <ol type="a">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non provident, quaerat facilis ad laudantium sed ab excepturi fugit officia minima! A lista deve continuar sendo numerada a partir do 3, o atributo deve sempre receber valores numéricos</p>
+
+    <ol type="a" start="3" >
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+    <!-- atividade 2 - troque o type do modo de preparo para que seja marcado como algarismos romanos maiusculos -->
+
+    <h2>Listas de definições</h2>
+
+    <p>Listas de definições são usadas para criar uma lista de termos e seus significados.</p>
+
+    <dl>
+        <dt>termo</dt>
+        <dd>definição</dd>
+
+        <dt>água</dt>
+        <dd>líquido incolor, inodoro e insípido</dd>
+
+        <dt>coquinha gelada</dt>
+        <dd>bebida refrescante que alegra nosso coração</dd>
+
+        <dt>café</dt>
+        <dd>bebida quente feita a partir dos grãos torrados e moídos do cafeeiro</dd>
+
+        <!-- lista mista -->
+
+        <dt>gripado</dt>
+        <dd>
+            Adjetivo Masculino Singular
+            <ul>
+                <li>Que está com gripe...</li>
+                <li>Que tem sintomas de gripe...</li>
+                <li>Que está resfriado...</li>
+            </ul>
+        </dd>
+    </dl>
+
+
+    <h2>Listas Mistas</h2>
+
+    <p>Listas mistas são usadas para criar uma lista de itens que podem conter outros tipos de listas dentro deles.</p>
+
+    <ul>
+        <li>Fazer coisa 1</li>
+        <li>Fazer coisa 2</li>
+        <li>
+            Fazer coisa 3
+            <ol>
+                <li>Passo a da coisa 3</li>
+                <li>Passo b da coisa 3</li>
+            </ol>
+        </li>
+        <li>Fazer coisa 4</li>
+        <li>Fazer coisa 5</li>
+        <li>
+            <dl>
+                <dt>Termo 1</dt>
+                <dd>Definição do termo 1</dd>
+
+                <dt>Termo 2</dt>
+                <dd>Definição do termo 2</dd>
+            </dl>
+        </li>
+    </ul>
+
+    <h2>Imagens</h2>
+
+    <p>Imagens podem ser inseridas em uma página HTML usando a tag &lt;img&gt;. Tendo atributos obrigatórios e opcionais. O src e o alt são obrigatórios, o restante é opcional como whidth, height e title</p>
+
+    <h3>Imagem salva localmente no projeto</h3>
+    
+    <!-- src - indica o local da imagem -->
+    <!-- caminho absoluto : C:\Users\kathi\Desktop\DC-L14-JS\aula02\imagemGatinho.jpg -->
+    <!-- caminho relativo : ./imagemGatinho.jpg
+                            ./imagens/imgDentroDaPasta.jpg
+    -->
+    <img src="imagemGatinho.jpg" alt=" gatinho fofo meme">
+    <br>
+    <img src="imagens/imgDentroDaPasta.jpg" alt=" outra imagem de gatinho fofo meme">
+    <img src="imagens/imgDentroDaPasta.jpg" alt=" outra imagem de gatinho fofo meme">
+    <img src="imagens/imgDentroDaPasta.jpg" alt=" outra imagem de gatinho fofo meme">
+
+    <!-- atividade 3 :crie uma pasta para imagens, procure uma imagem na internet, salve ela dentro da pasta criada ( preferencialmente nos formatos .jpg / .png / .svg ou .gif) e insira essa imagem entre o título da receita e o parágrafo de descrição -->
+
+
+    <h3>Imagem com ulr da internet</h3>
+
+    <img src="data:image/jpeg;base64,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" alt=" gato fofinho com óculos e fazendo joinha">
+
+
+    <img src="data:image/jpeg;base64,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" alt=" gato fofinho com óculos e fazendo joinha">
+
+    <!-- atividade 3 :crie uma pasta para imagens, procure uma imagem na internet, salve ela dentro da pasta criada ( preferencialmente nos formatos .jpg / .png / .svg ou .gif) e insira essa imagem entre o título da receita e o parágrafo de descrição -->
+
+    <h3>Largura e altura de uma imagem</h3>
+
+    <img src="imagemGatinho.jpg" alt=" gatinho fofo meme">
+    <!-- sem width e height a imagem é renderizada conforme o tamanho original dela -->
+    <img src="imagens/imgDentroDaPasta.jpg" alt=" outra imagem de gatinho fofo meme" width="400">
+    <!-- width  é a largura da imagem, usando essa propriedade ele ajusta a altura proporcionalmente a largura -->
+    <img src="imagens/imgDentroDaPasta.jpg" alt=" outra imagem de gatinho fofo meme" height="200">
+    <!-- height  é a altura da imagem, usando essa propriedade ele ajusta a largura proporcionalmente a altura -->
+
+    <img src="imagens/imgDentroDaPasta.jpg" alt=" outra imagem de gatinho fofo meme" width="200" height="200">
+    <!-- usando width e height juntos, a imagem é renderizada conforme as medidas passadas, nesse caso a imagem pode ficar distorcida -->
+
+    <h2>Links e navegação</h2>
+
+    <h3>Links externos</h3>
+    <p>
+        Para conteúdo produzido por outra pessoa, e que estou querendo acessar, uso o link externo. 
+        <a href="https://digitalcollege.com.br/" target="_blank"> site oficial da Digital College</a>
+        Para links externos é recomendado usar o atributo target="_blank" para que o link seja aberto em uma nova aba ou janela.
+    </p>
+
+    <a href="https://digitalcollege.com.br/" target="_blank"> site oficial da Digital College</a>
+
+    <h3>Links internos</h3>
+
+    <p>Para conteúdo produzido por mim, e que estou querendo acessar, uso o link interno.
+    <a href="atividade1.html">Atividade 1</a>
+    </p>
+
+    <!-- atividade 4insira um link (navegação externa) para unm vídeo do youtube com o modo de preparo da receita escolhida. Esse vídeio deve ser aberto em outra guia. Utilize a tag a e o atributo target. O texto para ser clicado deve ser "Assistir no YouTube o modo de preparo" -->
+
+
+
+</body>
+</html>
