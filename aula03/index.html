@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <!-- css no chat. Adicione no head para aplicar as linhas da tabela -->
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabelas</h1>
+
+    <table>
+        <tr> 
+            <th>país</th>
+            <th>capital</th>
+        </tr>
+        <tr>
+            <td>Brasil</td>
+            <td>Brasília</td>
+        </tr>
+        <tr>
+            <td>Argentina</td>
+            <td>Buenos Aires</td>
+        </tr>
+        <tr>
+            <td>Uruguay</td>
+            <td >Montevideo</td>
+        </tr>       
+    </table>
+
+    <h2>Tabela com expanção no sentido da linha</h2>
+
+    <table>
+        <tr>
+            <th>linguagem</th>
+            <th>framework</th>
+        </tr>
+        <tr>
+            <td rowspan="2">JavaScript</td> 
+            <td>Angular</td>
+        </tr>
+        <tr>
+            <td>Express</td>
+        </tr>
+    </table>
+
+
+    <h1>Formulários</h1>
+
+    <h2>Formulário com lables</h2>
+
+    <form action="#" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        <!-- value="", o valor que aparece no campo e é diferente do placeholder. O value serve para preencher o campo e normalmente fica vazio pois esperamos a digitação do usuário -->
+        <br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha">
+        <br>
+
+        <label for="data">Selecione a data</label>
+        <input type="date" id="data" name="data">
+        <br>
+
+        <label for="hora">Selecione a hora</label>
+        <input type="time" id="hora" name="hora">
+        <br>
+
+        <label for="numero">Número:</label>
+        <input type="number" id="numero" name="numero" placeholder="digite apenas números">
+        <br>
+
+        <label for="cor">Cor:</label>
+        <input type="color" id="cor" name="cor">
+        <br>
+        <label for="arquivo">Arquivo:</label>
+        <input type="file" id="arquivo" name="arquivo">
+        <!-- para upload de arquivos, pode ser usado o type="file" e as opções de tipo de arquivos serão exibidas -->
+
+        <input type="submit" value="Submeter">
+
+    </form>
+    
+</body>
+</html>
