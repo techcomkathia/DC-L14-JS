@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- crie uma página de receitas (página única) que obedeça as seguintes regras:
+     header: deve conter o título da página e um menu de navegação (com links para as seções da página, no caso serão as receitas)
+
+     main: deve conter as receitas. Detalhe cada receita deve ser uma seção (section) com um título (h2), uma descrição (p) e uma imagem (img) e as duas listas (ul e ol) com seus títulos devem estar dentro de uma divisão genérica (div)
+
+     rodapé: deve conter informações de contato (endereço, telefone e e-mail) e um aviso de direitos autorais (p)
+    -->
+    <header>
+        <!-- titulo da pagina -->
+        <!-- menu de navegacao tag nav -->
+
+        
+        <h1>Minhas Receitas Deliciosas</h1>
+        <nav>
+            <a href="#bolo">Bolo de Chocolate</a>
+            <a href="#bolinho">Bolinho de Chuva</a>
+        </nav>
+    </header>
+
+    
+
+    <main>
+
+        <!-- Receita 1 -->
+        <section id="bolo">
+            <h2>Bolo de Chocolate</h2>
+
+            <p>Receita fácil e deliciosa de bolo simples e fofinho, perfeita para o café da tarde ou aniversários.</p>
+
+            <img src="https://placehold.co/200x200" alt="Bolo de Chocolate">
+
+            <div class="listas">
+                <div id="ingredientes">
+                    <h3>Ingredientes</h3>
+                    <ul>
+                        <li>3 ovos</li>
+                        <li>1 xícara de açúcar</li>
+                        <li>1/2 xícara de manteiga</li>
+                        <li>1 xícara de leite</li>
+                        <li>2 xícaras de farinha de trigo</li>
+                        <li>1 colher de sopa de fermento</li>
+                        <li>1 pitada de sal</li>
+                    </ul>
+                </div>
+
+                <div id="modo-preparo">
+                    <h3>Modo de Preparo</h3>
+                    <ol>
+                        <li>Pré-aqueça o forno a 180°C.</li>
+                        <li>Misture ovos, açúcar e manteiga.</li>
+                        <li>Adicione leite e farinha aos poucos.</li>
+                        <li>Incorpore o fermento delicadamente.</li>
+                    <li>Asse por aproximadamente 40 minutos.</li>
+                </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Receita 2 -->
+        <section id="bolinho">
+            <h2>Bolinho de Chuva</h2>
+
+            <p>Doce tradicional brasileiro, crocante por fora e macio por dentro, perfeito para dias chuvosos.</p>
+
+            <img src="https://placehold.co/200x200" alt="Bolinho de Chuva">
+
+            <div class="listas">
+                <div id="ingredientes2">
+                    <h3>Ingredientes</h3>
+                    <ul>
+                        <li>2 ovos</li>
+                        <li>1 xícara de açúcar</li>
+                        <li>1 xícara de leite</li>
+                        <li>2 xícaras de farinha de trigo</li>
+                        <li>1 colher de chá de fermento</li>
+                        <li>Óleo para fritar</li>
+                        <li>Açúcar e canela para polvilhar</li>
+                    </ul>
+                </div>
+                <div id="modoPreparo2">
+                    <h3>Modo de Preparo</h3>
+                    <ol>
+                        <li>Bata os ovos com o açúcar.</li>
+                        <li>Adicione o leite e misture.</li>
+                        <li>Incorpore a farinha e o fermento.</li>
+                    <li>Frite pequenas porções em óleo quente.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+     <footer>
+        <p><strong>Contato:</strong></p>
+        <p>Endereço: Rua das Receitas, 123 - Centro</p>
+        <p>Telefone: (11) 99999-9999</p>
+        <p>Email: contato@minhasreceitas.com</p>
+
+        <p>&copy; 2026 Minhas Receitas - Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+</html>

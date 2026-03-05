@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04</title>
+</head>
+<body>
+
+    <h1>Aula 04</h1>
+
+    <form action="#">
+
+        <fieldset>
+            <!-- cria um titulo para um grupo de opções -->
+            <legend>Grupo de Opções</legend>
+            <label for="grupo">Legenda para o grupo de opções</label>
+            <br>
+            <input type="radio" name="grupo" id="opcao1" value="um">
+            <label for="opcao1">Opção 1</label>
+            <br>
+            <input type="radio" name="grupo" id="opcao2" value="dois">
+            <label for="opcao2">Opção 2</label>
+        </fieldset>       
+
+        <br>
+        
+        <fieldset>
+            <!-- cria um titulo para um grupo de opções -->
+            <legend>Segundo Grupo de Opções</legend>
+            <label for="grupo2">Legenda para o segundo grupo de opções</label>
+            <br>
+            <input type="checkbox" name="grupo2" id="opcao4" value="4">
+            <label for="opcao4">Opção 4</label>
+            <br>
+            <input type="checkbox" name="grupo2" id="opcao5" value="5">
+        <label for="opcao5">Opção 5</label>
+
+        <br>
+
+        <label for="select"> Selecione uma opção</label>
+        <select name="select" id="select">
+            <!-- para simular um placeholder -->
+            <option value="" selected hidden>Selecione uma opção</option>
+            <option value="1">Um</option>
+            <option value="2">Dois</option>
+            <option value="3" disabled>Três</option>
+            <option value="4">Quatro</option>
+            <option value="5">Cinco</option>
+            <option value="6" >Seis</option>
+        </select>
+
+        <br>
+        <label for="reclamacao2">Digite aqui a sua segunda lamentação</label>
+        <br>
+        <textarea name="reclamacao2" id="reclamacao2" cols="30" rows="10" maxlength="500" placeholder="Digite aqui a sua segunda lamentação em até 500 caracteres"></textarea>
+
+        </fieldset>
+
+    </form>
+
+    
+    
+</body>
+</html>

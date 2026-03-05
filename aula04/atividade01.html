@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+</head>
+<body>
+    <!--  Criação de um formulário de submissão para vaga de tecnologia
+      
+    campos necessários:
+    nome completo
+    email
+    cargo de tecnologia (seleção de uma opção da lista)
+        - pessoa desenvolvedora
+        - analista de sistemas
+        - administrador(a) de banco de dados
+        - testador(a)
+    Genero (seleção de uma opção da lista)
+        - feminino
+        - masculino
+        - outro
+    Unidade de interesse (seleção de uma ou mais opções da lista)
+        - Fortaleza
+        - Caucaia
+        - Eusébio      
+    -->
+
+     
+
+    <form action="#">
+        <label for="nome">nome completo:</label>
+        <input type="text" id="nome" name="nome">
+        <br>
+        <label for="email">digite seu email:</label>
+        <input type="text" id="email" name="email">
+        <br>
+
+        <label for="cargo">qual seu cargo de tecnologia?</label>
+        <br>
+
+        <input type="radio" name="cargo" id="1" value="pessoa desenvolvedora">
+        <label for="1cargo">pessoa desenvolvedora</label>
+
+        <input type="radio" name="cargo" id="2cargo" value="analista de sistemas">
+        <label for="2cargo">analista de sistemas</label>
+
+        <input type="radio" name="cargo" id="3cargo" value="administrador(a) de banco de dados">
+        <label for="3cargo">administrador(a) de banco de dados</label>
+        <br>
+        <input type="radio" name="cargo" id="4cargo" value="testador(a)">
+        <label for="4cargo">testador(a)</label>
+        <br>
+        <label for="genero">qual seu genero ?</label>
+        <br>
+
+        <input type="radio" name="genero" id="1genero" value="feminino">
+        <label for="1genero ">feminino</label>
+        <br>
+        <input type="radio" name="genero" id="2genero" value="masculino">
+        <label for="2genero">masculino</label>
+        <br>
+        <input type="radio" name="genero" id="3genero" value="outro">
+        <label for="3genero">outro</label>
+        <br>
+
+        <label for="interesse">qual unidade de interesse ?</label>
+        <!-- <br>
+        <input type="checkbox" name="unidade" id="1unidade" value="fortaleza">
+        <label for="1unidade">Fortaleza</label>
+
+        <input type="checkbox" name="unidade" id="2unidade" value="caucaia">
+        <label for="2unidade">Caucaia</label>
+
+        <input type="checkbox" name="unidade" id="3unidade" value="eusébio">
+        <label for="3unidade">Eusébio</label> -->
+        <br>
+
+        <!-- Atividade 02
+        
+        comente as opções de unidade de interesse no formato input do tipo checkbox para substituir pelo select. Faça a aplicação de um "placeholder" indicando que o campo deve ser preenchido 
+
+         inclua um campo para a apresentação pessoal, onde o usuário pode digitar um texto de no máximo 500 caracteres se apresentando. Esse campo deve ter um placeholder, 50 colunas e 10 linhas -->
+
+        <label for="unidade">Unidade de interesse</label>
+        <select id="unidade" name="unidade">
+            <!-- para simular um placeholder -->
+            <option value="" selected hidden>Selecione uma opção</option>
+            <option value="Fortaleza">Fortaleza</option>
+            <option value="Caucaia" >Caucaia</option>
+            <option value="Eusebio">Eusébio</option>
+        </select>
+        <br><br>
+        <label for="apresentacao">fale um pouco sobre você</label>
+        <textarea name="apresentacao" id="apresentacao" cols="50"
+        rows="10" maxlength="500" placeholder="diga mais sobre você em ate 500 caracteres"></textarea>
+        <input type="submit" value="enviar">
+    </form>
+    
+</body>
+</html>
