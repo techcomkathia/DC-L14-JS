@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css externo: afeta todas as páginas que estiverem linkadas a esse arquivo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- css interno: afeta todas as tags que estiverem dentro do body especificamente para esse documento -->
+    <style>
+        /* as regras que valem aqui são as regras do css. */
+        h2{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- css inline afeta apenas a tag que foi passado o valor para o atributo style -->
+    <h1 style="color:blue" class="destaque">Olá Mundo</h1>
+    <h1>Olá Mundo 2</h1>    
+
+    <h2>Olá Mundo 3</h2>
+    <h2 class="destaque">Titulo com classe destaque</h2>
+    <h2>Olá Mundo 5</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+    <p class="destaque" id="especial">Lorem ipsum dolor sit amet.</p>
+
+    <ul class="destaque">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <div>
+        <h1>Sou um h1 dentro de uma div</h1>
+        <section>
+            <h1>Sou um h1 dentro de uma section</h1>
+        </section>
+    </div>
+
+    <section>
+        <h1>Sou um h1 dentro de uma section</h1>
+    </section>
+
+    <div>
+        <h1>Sou um h1 dentro de uma div</h1>
+    </div>
+</body>
+</html>

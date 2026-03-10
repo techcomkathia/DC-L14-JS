@@ -1,0 +1,46 @@
+/* seletores de class */
+.tituloPagina {
+    /* fonte times new roman
+    cor branca, 60px, alinhado ao centro e com o fundo purple
+    */
+    font-family: 'Times New Roman', Times, serif;
+    color: #0c7797;
+    font-size: 60px;
+    text-align: center;
+    background-color: rgba(61, 204, 178, 0.813);
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:40px;
+    text-align: center;
+    color: purple;
+    text-decoration: none;
+
+}
+
+
+h2{
+    background-color: blueviolet;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 30px;
+}
+
+body{
+    background-color: azure;
+}
+
+/* remoção da linha do texto link */
+a{
+    text-decoration: none;
+}
+
+/* modificação do tipo de marcador da lista não ordenada */
+
+ul{
+    list-style-type: square;
+}
+
+
+

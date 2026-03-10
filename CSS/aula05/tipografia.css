@@ -1,0 +1,28 @@
+/* font-family : fonte que vai ser usada */
+h1, li {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* tamanho da fonte */
+h6{
+    font-size: 50px;
+}
+/* alinhamento */
+.esquerda {
+    text-align: left;
+}
+
+/* cor da fonte */
+.direita {
+    text-align: right;
+    color:blueviolet;
+}
+
+/* cor de plano de fundo */
+.centralizado {
+    text-align: center;
+    background-color: lightgray;
+}
+.justificado {
+    text-align: justify;
+}

@@ -1,0 +1,36 @@
+/* seletores de tag */
+h1{
+    color:green;
+}
+
+h2{
+    color: pink;
+}
+
+/* seletores de classe */
+.destaque{
+    background-color: beige;
+    color:blueviolet;
+}
+
+/* seletores de id */
+#especial{
+    color: red;
+}
+
+/* o que é mais específico: tag<class<id */
+
+/* seletores por lista */
+/* estiliza uma lista de tags com as mesmas regras. Obs: nao funciona com classes e caso exista uma tag com classe e id o id tera prioridade */
+h1,h2,p{
+    text-align: center;
+}
+
+/* seletor de descendente ou afiliação  */
+ul li{
+    color:blue;
+}
+
+div section h1{
+    color:orange;
+}

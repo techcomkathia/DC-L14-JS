@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+div{
+    background-color: black;
+    color: white;
+}
+
+.todasBordas{
+    border:2px  solid  rgb(249, 0, 0);
+}
+
+.bordaEsquerda{
+    border-left: 8px solid rgb(21, 0, 249);
+}
+
+.bordaDireita{
+    border-right: 10px solid rgb(0, 249, 0);
+}
+
+.bordaSuperior{
+    border-top: 12px solid rgb(249, 108, 0);
+}
+
+.bordaInferior{
+    border-bottom: 15px solid rgb(249, 0, 249);
+}
+
+h1{
+    font-family: 'Monsieur La Doulaise', cursive;
+}
