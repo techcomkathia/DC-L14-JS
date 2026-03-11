@@ -1,0 +1,45 @@
+header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid red;
+}
+
+img{
+    /* criar uma imagem redonda. Detalhe essa imagem deve ser quadrada. */
+    border-radius: 50% ;
+    border: 2px solid red;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/* familias de fontes */
+main{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#tituloContato{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* tamanho e alinhamento */
+p{
+    font-size: 10px;
+    text-align: justify;
+}
+
+/* bordas */
+
+footer{
+    background-color: rgba(0, 0, 0, 0.579);
+    color: white;
+    border-top: 5px solid blue;
+}

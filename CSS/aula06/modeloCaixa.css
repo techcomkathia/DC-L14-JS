@@ -1,0 +1,62 @@
+/* reset de margin e padding e configuração do box-sizing */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* configura o box-model com o box-sizing delimitado pela borda */
+}
+
+div{
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+}
+
+.paddingIgual{
+    padding: 20px; 
+    /* padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px; */
+}
+
+.paddingTopoBaseIguaisLadosIguais{
+    padding: 20px 10px;
+    /* padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-left: 10px; */
+}
+
+.paddingsDiferentes{
+    padding: 20px 10px 5px 2px;
+    /* padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 2px; */
+}
+
+h5{
+    background-color: red;
+    color: white;
+}
+
+.outraClasse{
+    font-size: 30px;
+}
+
+#especial{
+    background-color: blue;
+}
+
+.marginsIguais{
+    margin:20px;
+}
+
+.marginsTopoBaseIguaisLadosIguais{
+    margin: 20px 10px;
+}
+
+.marginsDiferentes{
+    margin: 20px 10px 5px 2px;
+}
