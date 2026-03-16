@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* definição das variáveis de css */
+:root{
+    /* responsavel pela definição dos nomes das variáveis que estarão dispoveis para toda a pagina ( todas as tags) */
+    /* --nome-variavel: valor; */
+    --cor-plano-de-fundo: rgb(31, 63, 35);
+    --cor-titulos: rgb(1, 74, 11);
+    --cor-texto: rgb(185, 3, 143);
+    --cor-botoes: rgb(31, 63, 35);
+    --fonte-titulos: 'Courier New', Courier, monospace;
+    --fonte-corpo: 'arial', sans-serif;
+}
+ 
+
+
+h1{
+    color: rgb(1, 74, 11);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    color:var(--cor-texto);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button{
+    background-color: rgb(31, 63, 35);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+section{
+    background-color: rgb(31, 63, 35);
+}
+
+form{
+    background-color: rgba(0, 0, 0, 0.766);
+    padding: 30px;
+}

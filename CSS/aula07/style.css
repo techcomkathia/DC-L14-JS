@@ -1,0 +1,28 @@
+/* a{
+    display: block;
+}
+
+img{
+    display: block;
+} */
+
+/* posicionamento com o recurso do display (inline, block, inline-block) devem ser aplicados na tag, diretamente no elemento */
+
+.pai{
+    background-color: aqua;
+    padding: 20px;
+    margin: 20px;
+    height: 1200px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column-reverse;
+    /* para column, alinha no eixo horizontal */
+    /* para row, alinha no eixo vertical */
+    align-items: center;
+    /* para column, alinha no eixo vertical */
+    /* para row, alinha no eixo horizontal */
+    justify-content: end;
+
+}

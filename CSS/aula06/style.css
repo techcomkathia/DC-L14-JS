@@ -1,0 +1,60 @@
+/* reset de margin e padding e configuração do box-sizing */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* estilização da cor do plano de fundo do body utilize preto :)*/
+
+body{
+    /* background-color: black; */
+    background-image:url(black-texture.jpg) ;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+
+/* estilização da cor do plano de fundo da div utilize branco , coloque uma largura (width) de 400px , arrendonde as bordas da div para 20px, coloque um espaçamento interno (padding) de 20px em todas as laterais */
+
+div{
+    background-color: white;
+    width: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* estilização da imagem: 200px largura e arredondamento de bordas de 50% */
+
+img{
+    width: 200px;
+    border-radius: 50%;
+}
+
+/* aplique a cor ao título e essa mesma cor deve ser aplicada ao background dos links */
+
+h1{
+    color: #ff69b4;
+}
+/* 20px para o topo e a base e 0px nas laterais para as margens */
+a{
+    background-color: #ff69b4;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    margin: 20px 0px;
+    border-radius: 40px;
+    display: block;
+}
+
+/* aplique aos links um display que faça com que eles sejam exibidos em linha */
+
+
+/* aplique um hover nos links que modifique a cor de plano de fundo para um tom mais escuro que a cor atual, mas que seja perceptivel para o usuário */
+
+a:hover{
+    background-color: #7a08a1;
+}
