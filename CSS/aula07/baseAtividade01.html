@@ -26,176 +26,26 @@
                 <li><a href="#">Produtos</a></li>
                 <li><a href="#">Ofertas</a></li>
                 <li><a href="#">Contato</a></li>
+                <!-- <h5>exemplo</h5>
+                <h5>exemplo</h5> -->
             </ul>
         </nav>
     </header>
 
-    
+       <!-- EXERCÍCIO 2:
+         1. Defina um background claro para a seção do banner.
+         2. Teste como imagens com um display flex em diferentes direções (flex direction) s
+         3. As imagens devem ser renderizadas uma abaixo da outra, com espaçamento de 10px  não utilize o margin, dica use o gap
+         4. As imagens devem ser centralizadas horizontalmente. Poderá usar o justify-content ou o align-items para isso, a depender da direção do flex escolhida.
 
-    <!-- EXERCÍCIO 2:
-        
     -->
     <section class="banner">
         <img class="banner-img" src="https://placehold.co/800x300/084F8C/F29422/svg" alt="Banner principal 1" >
         <img class="banner-img" src="https://placehold.co/800x300/084F8C/F29422/svg" alt="Banner principal">
     </section>
 
-    <!-- EXERCÍCIO 3:
-         1. Cada div com class produto deve ter largura de 400px, margem de 10px  e padding de 10px.
-         2. Aplique para a classe produto um background claro e uma borda fina.
-         4. Todos os produtos devem ser renderizados um ao lado do outro, utilizando as propriedades de display
-    -->
-    <section class="produtos">
-        <h2>Produtos em Destaque</h2>
 
-        <div class="produto">
-            <img src="https://placehold.co/300x200/084F8C/FFFFFF/png" alt="Produto 1">
-            <h3>Smartphone</h3>
-            <p>Tecnologia de ponta na palma da mão.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut molestias aperiam soluta quo necessitatibus quos, at officiis libero cupiditate voluptatem?</p>
-            <span class="preco">R$ 2.200,00</span>
-        </div>
-
-        <div class="produto">
-            <img src="https://placehold.co/300x200/5B9ED9/FFFFFF/png" alt="Produto 2">
-            <h3>Fone Bluetooth</h3>
-            <p>Som de qualidade e mobilidade.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum impedit ab iste sit molestias incidunt fugiat veritatis explicabo nemo.
-            </p>
-            <span class="preco">R$ 350,00</span>
-        </div>
-
-        <div class="produto">
-            <img src="https://placehold.co/300x200/F29422/FFFFFF/png" alt="Produto 3">
-            <h3>Notebook</h3>
-            <p>Alta performance para trabalho e estudos.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsam qui doloremque quidem nostrum sint eveniet cum? Assumenda.</p>
-            <span class="preco">R$ 3.500,00</span>
-        </div>
-
-
-        <div class="produto">
-            <img src="https://placehold.co/300x200/F26430/FFFFFF/png" alt="Produto 4">
-            <h3>Tablet</h3>
-            <p>Design moderno e tela de alta resolução.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis molestiae facilis, ducimus ullam dolores at.</p>
-            <span class="preco">R$ 1.800,00</span>
-        </div>
-
-    </section>
-
-
-    <!-- FLEXBOX -->
-    <!-- GUIA ILUSTRADO DE FLEXBOX COM EXEMPLOS DE USO https://css-tricks.com/wp-content/uploads/2022/02/css-flexbox-poster.png -->
-    <!-- EXERCÍCIO 4:
-         1. Transforme a seção de produtos em display: flex.
-         2. Alinhe os itens verticalmente (flex-direction) e os itens sejam renderizados na ordem inversa;
-    -->
-
-    <section class="flex-teste-vertical">
-        <img src="https://placehold.co/200x200/F26430/FFFFFF/png" alt="img1">
-        <img src="https://placehold.co/200x200/F29422/FFFFFF/png" alt="img2">
-        <img src="https://placehold.co/200x200/5B9ED9/FFFFFF/png" alt="img3">
-        <img src="https://placehold.co/200x200/084F8C/FFFFFF/png" alt="img4">
-    </section>
-
-    <!-- EXERCÍCIO 5:
-         1. A seção flex-teste-horizontal deve ter 800px de altura e 450px de largura, um background claro e uma borda fina.
-         2. Transforme a seção de produtos em display: flex.
-         3. Alinhe os itens horizontalmente (eixo x) (flex-direction) e permita que os itens sejam quebrem de linha se necessário (com flex-wrap);
-         4. Alinhe os itens ao centro do container no eixo x (justify-content).
-         5. Distribua os itens para que o espaço da altura (eixo y) do container seja distribuido por igual entre os itens .
-    -->
-
-    <section class="flex-teste-horizontal">
-        <img src="https://placehold.co/200x200/F26430/FFFFFF/png" alt="img1">
-        <img src="https://placehold.co/200x200/F29422/FFFFFF/png" alt="img2">
-        <img src="https://placehold.co/200x200/5B9ED9/FFFFFF/png" alt="img3">
-        <img src="https://placehold.co/200x200/084F8C/FFFFFF/png" alt="img4">
-    </section>
-
-    <!-- EXERCÍCIO 6: 
-        1. Adicione um background claro para a seção de container altura, uma borda fina e uma altura de 500px.
-        2. Transforme o container altura em display: flex.
-        3. Alinhe os itens para que ocupem toda a altura do container.
-    -->
-
-    <section class="teste-altura">
-    <h2>Teste de Altura com Flex</h2>
-
-    <div class="container-altura">
-        <div class="coluna coluna-esquerda">
-            <p> Esta divisão deve ocupar toda a altura do container quando configurado corretamente.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, praesentium.</p>
-        </div>
-
-        <div class="coluna coluna-direita">
-            <p> Esta coluna também deve se esticar verticalmente.  Teste o comportamento alterando o alinhamento no eixo transversal</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, praesentium.</p>
-        </div>
-    </div>
-</section>
-
-    <!-- POSITION -->
-    <!-- EXERCÍCIO 7:        
-    -->
-    <section class="oferta">
-        <div class="card-oferta">
-            <h1 class="tag-promocao">Promoção</h1>
-            
-            <img src="https://placehold.co/400x250/5B9ED9/084F8C/svg" alt="Oferta Especial">
-            <h3>Monitor Gamer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ipsum pariatur deleniti earum temporibus ratione, veritatis nesciunt saepe quis voluptas odio eius rem vitae illum quia quo corrupti quod natus iste expedita, totam excepturi praesentium assumenda voluptatum. Pariatur ipsam harum, nobis in deserunt mollitia. Harum vero maxime totam ad quos!</p>
-            <h4>R$ 2.200,00</h4>
-
-            <button class="btn-comprar">Comprar</button>
-        </div>
-    </section>
-
-    <!-- BOTÃO FIXO -->
-    <!-- EXERCÍCIO:
-        1. Defina um tamanho de 150px para a imagem.
-        1. Transforme este botão em position: fixed.
-        2. Posicione no canto inferior direito.
-    -->
-
-    <img class="btn-wpp" src="logoWhats.png" alt="botão de contato" width="150">
     
-
-    <!-- EXERCÍCIO FINAL:
-         1. Utilize a estrategia de posicionamento que mais faça sentido para você exercício para construir o footer abaixo.
-         2. O footer deve ter uma cor de plano de fundo e uma cor de fonte que combine com o plano de fundo.
-         3. A div de id de direitos deve ter o conteúdo centralizado horizontalmente.
-         4. A div de id info-footer deve ter as 3 divs internas renderizadas um ao lado do outro com espaçamento iguais entre elas.
-    -->
-    <footer class="footer">
-        <div id="direitos">
-            <p>© 2026 TechStore</p>
-            <p>Todos os direitos reservados</p>
-        </div>
-
-        <div id="info-footer">
-            <div>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
-
-            <div>
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Serviço</a>
-                <a href="#">Contato</a>
-                <a href="#">Suporte</a>
-            </div>
-
-            <div>
-                <p>Av. Paulista, 1000 - Bela Vista, SP</p>
-                <p>(11) 1234-5678</p>
-                <p>hDf9a@example.com</p>
-
-            </div>
-        </div>
-    </footer>
 
 </body>
 </html>
