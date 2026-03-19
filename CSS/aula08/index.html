@@ -78,14 +78,23 @@
         </div>
     </div>
 
-    <table>
-        <tr>
-            <td class="border border-5 border-danger ">Column</td>
-            <td class="border border-5 border-warning ">Column</td>
-            <td class="border border-5 border-info ">Column</td>
-        </tr>
-    </table>
-            
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Click em mim para ver o offcanvas</button>
+
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">Mensagem do offcanvas </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body bg-info-subtle">
+            <h1>Olá Mundo</h1>
+            <p>Exemplo de offcanvas que só funcionará quando o JS estiver ativado</p>
+            <ul>
+                <li><a href="">link1</a></li>
+                <li><a href="">link2</a></li>
+                <li><a href="">link3</a></li>
+            </ul>
+        </div>
+        </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
