@@ -8,3 +8,22 @@ let atendidos = []
 
 //métodos para remoção: shift (inicio) e pop (final), sempre retornam o item removido
 //métodos para adição: push(final) e unshift(inicio)
+
+for (let i = 1; i <= 4; i++){
+    let pacientePrioritario
+    let pacienteNormal
+    if(i%2==1){
+        //senhas ímpares atenderão pacientes prioritários
+        pacientePrioritario = filaPrioritaria.shift()
+        atendidos.push(pacientePrioritario)
+    }
+    else{
+        //senhas pares atenderão pacientes normais
+        pacienteNormal = filaNormal.shift()
+        atendidos.push(pacienteNormal)
+    }    
+}
+
+console.log("Fila Prioritária: ", filaPrioritaria);
+console.log("Fila Normal: ", filaNormal);
+console.log("Atendidos: ", atendidos);
