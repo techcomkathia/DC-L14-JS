@@ -10,3 +10,23 @@ let produto = `{
 
 //Adicione a propriedade valorAvista (terá 10% de desconto sob o preço total), altere a quantidade para 100 , insira a propriedade fabricante (Samsung) e exclua a propriedade estoque
 //mostre no console o JSON antigo e o novo
+
+let produto = `{
+    "nome": "TV 4K",
+    "preco": 5000,
+    "qtd": 10,
+    "estoque": true
+}`
+
+console.log(produto)
+
+let objt = JSON.parse(produto)
+
+objt.valorAvista = objt.preco *0.9;
+objt.fabricante = "Sansung"
+objt.qtd = 100
+delete objt.estoque
+
+let novoJson = JSON.stringify(objt)
+
+console.log(novoJson)
