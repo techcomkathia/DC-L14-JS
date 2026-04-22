@@ -37,3 +37,22 @@ multiplicacao(10, 5);
 divisao(10, 5);
 divisao(10, 0);
 divisao(10, -5);
+
+function calculadora(a,b, operacao){
+    switch(operacao){
+        case '+':
+            soma(a,b);
+            break;
+        case '-':
+            subtracao(a,b);
+            break;
+        case '*':
+            multiplicacao(a,b);
+            break;
+        case '/':
+            divisao(a,b);
+            break;
+        default:
+            console.log("Operação inválida");
+    }
+}
