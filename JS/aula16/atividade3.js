@@ -38,3 +38,28 @@ let func = [
 
 console.log(func[0].nome) // joao
 console.log(func[1].nome) // maria
+
+
+function calcularValorComAdicional(valor, adicional){
+    return valor + (valor * adicional / 100)
+}
+
+function temAtributo( objt, atributo){
+    return Object.keys(objt).includes(atributo)
+
+}
+
+function atualizarFuncionario(funcionario){
+    let novoFuncionario = {...funcionario}
+
+    if(novoFuncionario.anosEmpresa>5){
+        novoFuncionario.salario = calcularValorComAdicional(novoFuncionario.salario, 15)
+    }
+    if (temAtributo(novoFuncionario, "filhos") && novoFuncionario.filhos > 0){
+        novoFuncionario.dependentes  = novoFuncionario.filhos
+    }
+    return novoFuncionario
+}
+
+let retornoFuncao = atualizarFuncionario(funcionario)
+console.log(funcionario, retornoFuncao )
