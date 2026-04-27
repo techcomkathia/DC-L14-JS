@@ -6,3 +6,7 @@ let pessoas = [
     {nome: "Maria", idade: 25, cidade: "Rio de Janeiro", salario: 2500},
     {nome: "Pedro", idade: 35, cidade: "Belo Horizonte", salario: 3500}
 ]
+
+//https://github.com/okanharenan/js-l14/blob/main/aula17/atividade2.js
+//https://github.com/alexsousarodrigues1919-max/DC-LV14-JS/blob/main/js/aula17/atividade02.js
+//https://github.com/yagol2202/jsL14/blob/8b45f921ccfe8b746446252ddaace8560db1d7fd/aula16/forEach.js
