@@ -21,3 +21,30 @@ let alunos = [
     }
 ]
 //execute as funções para o cleitinho (aluno[0]) e para o sandoval (aluno[1])
+
+function calcularMedia(aluno) {
+    let soma = 0
+    for(nota of aluno.notas) {
+        soma += nota
+    }
+    return soma / aluno.notas.length
+}
+
+function calcularFaltas(aluno) {
+    let totalFaltas = 0
+    for(falta of aluno.faltas) {
+        totalFaltas += falta
+    }
+    return totalFaltas
+}
+
+function mostrarDados(aluno, callback) {
+    for(chave in aluno) {
+        console.log(`${chave}: ${aluno[chave]}`)
+    }
+
+    console.log(`${callback.name}: ${callback(aluno)}`)
+}
+
+mostrarDados(alunos[0], calcularMedia)
+mostrarDados(alunos[0], calcularFaltas)
