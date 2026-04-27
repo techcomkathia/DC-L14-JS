@@ -9,3 +9,26 @@ function mostroOresultado(numero,funcaoDeCallback){
 //importante TODOS OS CASOS devem conter retorno.
 
 //Dica o uso das chaves {} é obrigatório para o retorno de mais de uma linha, e o uso do return é obrigatório para retornar um valor. Os parametros também devem ser informados na função do tipo seta (arrow function) para que seja possível passar o número para a função de callback.
+
+let funcaoDeCallback = (a) =>{
+    if (a < 0){
+        return `${a} - número negativo`
+    }else if( a % 2 === 0){
+        let Multi = a * a
+        return `O numero ${a} é par e a multipliação dele mesmo é ${Multi}`
+    }else{
+        return ` O número ${a} é ímpar!`
+    }
+}
+
+mostroOresultado(4, funcaoDeCallback)
+mostroOresultado(3, (a) =>{
+    if (a < 0){
+        return `${a} - número negativo`
+    }else if( a % 2 === 0){
+        let Multi = a * a
+        return `O numero ${a} é par e a multipliação dele mesmo é ${Multi}`
+    }else{
+        return ` O número ${a} é ímpar!`
+    }
+})
