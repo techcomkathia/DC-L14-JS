@@ -21,3 +21,21 @@ let produtos = [
 //     {nome: "Meia", preco: preco com desconto},
 //     {nome: "Chinelo", preco: preco com desconto}
 // ]
+
+let novoArrayProduto = produtos.map((item) => {
+    let produtoComDesconto;
+    if(item.etiqueta === "vermelha"){
+        produtoComDesconto = item.preco *0.8
+    }
+    else if(item.etiqueta === "verde"){
+        produtoComDesconto = item.preco * 0.9
+    }
+    else if(item.etiqueta === "amarelo"){
+        produtoComDesconto = item.preco * 0.95
+    }
+
+    return {
+        nome : item.nome,
+        preco : produtoComDesconto
+    }
+})
