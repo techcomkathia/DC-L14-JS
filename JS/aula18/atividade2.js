@@ -11,3 +11,41 @@
 
 //DICA: use o innerHTML para adicionar as atividades na lista da ul que possui id de 'atividades'.
 //Após isso você pode usar classes ou formatar as propriedades de styles de cada atividade.
+
+
+//solicitação das informações ao usuário
+//teremos um array de objetos cada um com 2 atributos: texto e prioridade
+
+//criação do array de objetos
+let atividades = []
+
+for(let i=1; i<=5; i++){
+    let texto = prompt(`Digite a atividade ${i}`)
+    let prioridade = confirm(`A atividade ${i} é prioritária?`) //boolean: true ou false
+    //adciona o objeto ao array de atividades
+    atividades.push({texto, prioridade})
+}
+
+//selecionar o elemento da ul
+const ul = document.getElementById('atividades')
+let li = ``
+//inserir conteúdo na ul
+atividades.forEach((atividade)=>{
+   if(atividade.prioridade){
+    li+= `<li class='prioridade'>${atividade.texto}</li>`
+   }
+   else{
+    li+= `<li >${atividade.texto}</li>`
+   }
+})
+ul.innerHTML += li
+
+//fazer as alterações do css para as atividades com prioridade
+//com o conteúdo já adicionado ao html faremos a estilização
+const atividadesPrioritarias = document.getElementsByClassName('prioridade')
+
+console.log(atividadesPrioritarias)
+
+for(let i =0; i<atividadesPrioritarias.length; i++){
+    atividadesPrioritarias[i].style.color = 'red'
+}
