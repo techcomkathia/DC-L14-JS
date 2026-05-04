@@ -54,6 +54,40 @@
             }
         ]
 
+         let card = document.querySelector('.card');
+        card.classList.remove('d-none');
+
+
+
+        produtos.forEach((produto) => {
+            if (produto.id === 2){
+                let nome = document.querySelector('.nome')
+                nome.innerHTML = produto.nome;
+                let descricao = document.querySelector('.descricao');
+                descricao.innerHTML = produto.descricao;
+                let preco = document.querySelector('.preco');
+                preco.innerHTML = `R$ ${produto.preco}`;
+                let imagem = document.querySelector('.imagem');
+                imagem.src = produto.img;
+                imagem.alt = produto.nome;
+
+                //seleção da ancora com classe btn btn-primary
+                let botao = document.querySelector('a.btn.btn-primary');
+                botao.addEventListener('click', ()=>{
+                    alert(`Produto ${produto.nome} adicionado ao carrinho`)
+                })
+               
+            }
+        })
+
+
+
+        // Renan Okanha
+        //https://github.com/okanharenan/js-l14/blob/main/aula19/index.html
+
+        //Alex Sousa
+        //https://github.com/alexsousarodrigues1919-max/DC-LV14-JS/blob/main/js/aula19/atividade01.html
+
     </script>
     
 </body>

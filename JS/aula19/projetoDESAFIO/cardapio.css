@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+    background-image: url('./imagensCompactadas/imagens/bg.png');
+    color: #e3e0e0;
+    
+}
+
+header{
+    background-color:#1e1f22 ;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;   
+}
+
+ul li a{
+    color: #ffff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h1 , h2{
+    text-align: center;
+    margin: 20px;
+}
+
+h2{
+    color: #e0aa34;
+}
+
+.boxProduto{
+    background-color:RGBA(37, 37, 37, 0.8);
+    max-width: 890px;
+    margin: 20px auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.boxTexto{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.boxImg img{
+    width: 400px;
+}
+
+.btn{
+    width: 150px;
+    background-color: #FFAE00;
+    padding: 20px;
+    border:none;
+    border-radius: 10px;
+    color: #ffff;
+}
+.btn:hover{
+    background-color: #feae00;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+

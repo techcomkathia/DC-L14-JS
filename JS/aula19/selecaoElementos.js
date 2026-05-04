@@ -27,3 +27,13 @@ console.log(li)
 // seletor de tag com mais de uma classe
 let li2 = document.querySelectorAll('li.item.grupo')
 console.log(li2)
+
+//trabalho com os métodos dos arrays para NodeList é necessária a conversão para um array
+const listaLis = Array.from(li)
+
+listaLis.forEach(function(item){
+    item.style.color = 'red'
+})
+
+//htmlCollection não aceita os métodos para array( é necessária a conversão para um array com o Array.from())
+//NodeList aceita os métodos para array (forEach, map, filter, reduce)
