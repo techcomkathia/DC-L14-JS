@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <h1>Atividade 1</h1>
+    <p>A partir do array de produtos que você receber faça a representação das informações do segundo objeto produto no card abaixo. O card possui a classe d-none, que deve ser removida quando produto for completamente preenchido</p>
+
+    <div class="card d-none" style="width: 18rem;">
+    <img src="..." class="card-img-top imagem" alt="...">
+    <div class="card-body">
+        <h5 class="card-title nome">Card title</h5>
+        <p class="card-text descricao">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+        <p class="card-text preco">Lorem ipsum dolor sit amet consectetur.</p>
+        <a href="#" class="btn btn-primary">Click para comprar</a>
+    </div>
+    </div>
+
+    <script>
+
+        // use o método .classList.remove para remover a classe d-none do card
+        // utilize os seletores de classe para selecionar os elementos do card  e a propriedade innerHTML para preencher o card
+        // atenção a tag img não possui innerHTML, utilize as propriedades src e alt
+
+        //querySelector() - trazer o primeiro elemento que possui a mesma característica
+        //querySelectorAll() - trazer todos os elementos que possuem a mesma característica
+
+        const produtos= [
+            {
+                id: 1,
+                nome: "Produto 1",
+                descricao: "Descricao do produto 1",
+                preco: 100,
+                img:'https://placehold.co/600x400'
+            },
+            {
+                id: 2,
+                nome: "Produto 2",
+                descricao: "Descricao do produto 2",
+                preco: 200,
+                img:'https://placehold.co/600x400'
+            },
+            {
+                id: 3,
+                nome: "Produto 3",
+                descricao: "Descricao do produto 3",
+                preco: 300,
+                img:'https://placehold.co/600x400'
+            }
+        ]
+
+    </script>
+    
+</body>
+</html>
