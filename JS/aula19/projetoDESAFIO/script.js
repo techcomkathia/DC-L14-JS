@@ -18,6 +18,13 @@ let cardapio = {
             preco: 29.00,
             descricao: "Deixe-se envolver pelo sabor defumado do nosso Hambúrguer BBQ, uma deliciosa combinação de hambúrguer de carne suculenta, queijo cheddar derretido, cebola caramelizada e salada verde.",
             img: "imagensCompactadas/imagens/burger03.png"
+        },
+        ,
+        {
+            nome: "Defumado BBQ Burger",
+            preco: 29.00,
+            descricao: "Deixe-se envolver pelo sabor defumado do nosso Hambúrguer BBQ, uma deliciosa combinação de hambúrguer de carne suculenta, queijo cheddar derretido, cebola caramelizada e salada verde.",
+            img: "imagensCompactadas/imagens/burger03.png"
         }
     ],
 
@@ -46,6 +53,12 @@ let cardapio = {
     ]
 };
 
+let carrinho = []
+
+const burgueres = document.querySelector("#secaoBurguer")
+const acompanhamentos = document.querySelector("#secaoAcompanhamentos")
+const bebidas = document.querySelector("#secaoBebidas")
+
 
 /*
 <div class="boxProduto py-3">
@@ -65,3 +78,53 @@ let cardapio = {
 // para criar o conteúdo dos elementos filhos existem 2 abordagens:
 // 1. Usar o innerHTML
 // 2. Usar createElement e o appendChild. Atenção na estilização pelas classes do CSS. Nesse caso você usará  o atributo classList.
+
+//usar um atributo do objeto cardapio que é um array
+
+
+function montarSecao(secao, array){
+    array.forEach( (produto, index) =>{
+    let cardProduto = document.createElement("div")
+    //montar id para produto: remover espaco e transformar em minusculo
+    cardProduto.innerHTML = `
+        <div class="boxProduto py-3">
+            <div class="boxImg">  
+                <img class="imgProduto" src="${produto.img}" alt="${produto.nome}">   
+            </div>
+            <div class="boxTexto">
+                <h3 class="nomePreco">${produto.nome} - R$${produto.preco}</h3>
+                <p class="descricao">${produto.descricao}</p>
+                <button class="btn" id="btn${produto.id}" >Pedir</button>
+            </div>
+        </div>`
+
+    //selecionando o elemento pelo id e adicionando um escutando de evento. A manipulação para a acriação de um atributo id foi necessária mas normalmente esse atributo já existe no objeto dentro do array.
+    let botao = cardProduto.querySelector(`#btn${produto.id}`)
+    botao.addEventListener("click", () => {
+        adicionarProdutoAoCarrinho(produto)
+    })
+
+
+    //adicionar o novo card a secao pai
+    secao.appendChild(cardProduto)
+
+
+})}
+
+function adicionarProdutoAoCarrinho(produto){
+    carrinho.push(produto)
+    alert(`Produto ${produto.nome} adicionado ao carrinho!`)
+}
+
+montarSecao(burgueres, cardapio.burgueres)
+montarSecao(acompanhamentos, cardapio.acompanhamentos)
+montarSecao(bebidas, cardapio.bebidas)
+
+
+
+//complemente a função acima para que assim que seja detectado o clique em um botão, ele chame a funcao que ira adicionar o produto ao carrinho
+// ao adicionar um produto ao carrinho, ele deve ser adicionado ao array carrinho e um alert deve ser exibido com o nome do produto adicionado ao carrinho
+//crie uma função adicionarProdutoAoCarrinho que recebe objeto produto como parâmetro e adiciona o produto ao carrinho
+
+
+// crie uma função que é detalheProdutoAdionado, que será um modal do bootstrap que seja exibido quando o produto for adicionado ao carrinho. Ou seja a função adicionarProdutoAoCarrinho deve chamar essa funcao após incluir o produto ao array carrinho. https://getbootstrap.com/docs/5.3/components/modal/
