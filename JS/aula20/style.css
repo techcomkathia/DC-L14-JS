@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+form{
+    background: #fff;
+    max-width: 360px;
+    margin: 10px auto;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    flex-direction: column;
+}
+
+.oculta{
+    display: none;
+}
+
+.erro{
+    color: red;
+    font-weight: bold;
+    font-size: 8px;
+}
