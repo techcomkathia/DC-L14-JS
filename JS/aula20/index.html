@@ -46,7 +46,39 @@
 
     </section>
 
-    <script src="atividade1.js"></script>
+    <form action="" id="exemplo3">
+        <input type="text" placeholder="digite um texto" id="inputMudanca">
+    </form>
+
+    <p id="textoExemplo3"></p>
+
+    <section id="atividade2">
+
+        <form action="">
+            <p>Comanda automática. Digite os valores e automaticamente os campos de Taxa de Serviço, Subtotal e Total serão preenchidos</p>
+            <input type="number" id="entrada" placeholder="digite o valor da entrada">
+
+            <input type="number" id="pratoPrincipal" placeholder="digite o valor do prato principal">
+
+            <input type="number" id="bebidas" placeholder="digite o valor das bebidas">
+
+            <input type="number" id="sobremesa" placeholder="digite o valor da sobremesa">
+
+            <label for="taxaServico">Taxa de Serviço</label>
+            <input type="number" id="taxaServico" placeholder="Taxa de serviço" value="0" disabled>
+
+            <label for="subTotal">Subtotal</label><input type="number" id="subTotal" value="0" disabled></label>
+
+            <label for="total">Total com taxas</label><input type="number" id="total" value="0" disabled></label>
+        </form>
+
+        <button> Limpar Comanda</button>
+
+    </section>
+
+
+
+    <script src="eventoMudanca.js"></script>
     
 </body>
 </html>
