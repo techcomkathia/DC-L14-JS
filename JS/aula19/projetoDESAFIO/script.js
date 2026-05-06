@@ -95,8 +95,26 @@ function montarSecao(secao, array){
             <div class="boxTexto">
                 <h3 class="nomePreco">${produto.nome} - R$ ${produto.preco.toFixed(2)}</h3>
                 <p class="descricao">${produto.descricao}</p>
-                <button class="btn" id="btn${produto.id}" >Pedir</button>
+                <button class="btn" id="btn${produto.id}" data-bs-toggle="modal" data-bs-target="#detalheProduto${produto.id}" >Pedir</button>
             </div>
+
+            <div class="modal fade" id="detalheProduto${produto.id}" tabindex="-1" aria-labelledby="detalheProduto${produto.id}Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="detalheProduto${produto.id}Label">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p> ${produto.nome} adicionado ao carrinho</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
         </div>`
 
     //selecionando o elemento pelo id e adicionando um escutando de evento. A manipulação para a acriação de um atributo id foi necessária mas normalmente esse atributo já existe no objeto dentro do array.
@@ -114,13 +132,10 @@ function montarSecao(secao, array){
 
 function adicionarProdutoAoCarrinho(produto){
     carrinho.push(produto)
-    alert(`Produto ${produto.nome} adicionado ao carrinho!`)
+    //atualiza a tela do carrinho
+    montarCarrinho()
+    // alert(`Produto ${produto.nome} adicionado ao carrinho!`) alterado para a exibição do modal
 }
-
-montarSecao(burgueres, cardapio.burgueres)
-montarSecao(acompanhamentos, cardapio.acompanhamentos)
-montarSecao(bebidas, cardapio.bebidas)
-
 
 
 //complemente a função acima para que assim que seja detectado o clique em um botão, ele chame a funcao que ira adicionar o produto ao carrinho
@@ -132,6 +147,33 @@ montarSecao(bebidas, cardapio.bebidas)
 
 function montarCarrinho(){
     //verifica se há itens dentro do array carrinho
+   if(carrinho.length == 0){
+       corpoCarrinho.innerHTML = "Nenhum item no carrinho"
+   }else{
+    let totalCarrinho = 0
+    //limpa o corpo do carrinho com as informações anteriores e atualiza
+    corpoCarrinho.innerHTML = ""
+    carrinho.forEach((produto)=>{
+        totalCarrinho += produto.preco
+    
+        let detalheItem = document.createElement('p')
+        detalheItem.innerHTML = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`
+        corpoCarrinho.appendChild(detalheItem)
+   })
+
+   let detalheTotal = document.createElement('p')
+   detalheTotal.innerHTML = `Total: R$ ${totalCarrinho.toFixed(2)}`
+   corpoCarrinho.appendChild(detalheTotal)
    
             
+}}
+
+function montarTela(){
+    montarSecao(burgueres, cardapio.burgueres)
+    montarSecao(acompanhamentos, cardapio.acompanhamentos)
+    montarSecao(bebidas, cardapio.bebidas)
+    montarCarrinho()
 }
+
+
+montarTela()
