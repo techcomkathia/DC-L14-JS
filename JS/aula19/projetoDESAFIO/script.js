@@ -58,6 +58,7 @@ let carrinho = []
 const burgueres = document.querySelector("#secaoBurguer")
 const acompanhamentos = document.querySelector("#secaoAcompanhamentos")
 const bebidas = document.querySelector("#secaoBebidas")
+const corpoCarrinho = document.querySelector("#corpoCarrinho")
 
 
 /*
@@ -92,7 +93,7 @@ function montarSecao(secao, array){
                 <img class="imgProduto" src="${produto.img}" alt="${produto.nome}">   
             </div>
             <div class="boxTexto">
-                <h3 class="nomePreco">${produto.nome} - R$${produto.preco}</h3>
+                <h3 class="nomePreco">${produto.nome} - R$ ${produto.preco.toFixed(2)}</h3>
                 <p class="descricao">${produto.descricao}</p>
                 <button class="btn" id="btn${produto.id}" >Pedir</button>
             </div>
@@ -128,3 +129,9 @@ montarSecao(bebidas, cardapio.bebidas)
 
 
 // crie uma função que é detalheProdutoAdionado, que será um modal do bootstrap que seja exibido quando o produto for adicionado ao carrinho. Ou seja a função adicionarProdutoAoCarrinho deve chamar essa funcao após incluir o produto ao array carrinho. https://getbootstrap.com/docs/5.3/components/modal/
+
+function montarCarrinho(){
+    //verifica se há itens dentro do array carrinho
+   
+            
+}

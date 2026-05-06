@@ -22,12 +22,24 @@
                 <li><a href="#burguer">Hamburgueres</a></li>
                 <li><a href="#acompanhamentos">Acompanhamentos</a></li>
                 <li><a href="#bebidas">Bebidas</a></li>
-                <li><a href="">Carrinho</a></li>
+                <li><a href="" id="carrinho" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Carrinho</a></li>
                 <!-- https://getbootstrap.com/docs/5.3/components/offcanvas/
                  adapte o offcanvas para o seu projeto representando o carrinho. Ele será aberto quando a ancora #carrinho for clicada e mostrará todos os produtos adicionados ao carrinho e o somatorio total da compra -->
             </ul>
         </nav>
     </header>
+
+    <section>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-bs-theme="dark">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="corpoCarrinho">
+            
+        </div>
+        </div>
+    </section>
 
 
     <h1>CARDÁPIO DIGITAL LIVE 13</h1>
