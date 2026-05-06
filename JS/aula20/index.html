@@ -26,7 +26,27 @@
 
     <h1 id="termoPesquisa"></h1>
 
-    <script src="script.js"></script>
+
+    <section id="atividade1" class="oculta">
+
+        <form action="" id="cadastroProduto" >
+            <input type="text" id="nomeProduto" placeholder="Digite o nome do produto">
+            <input type="url" id="imagemProduto" placeholder="Digite a url da imagem">
+            <input type="number" id="precoProduto" placeholder="Digite o preco do produto">
+            <p class="erro oculta" id="erroPreco">O preço do produto deve ser maior que zero</p>
+            <textarea name="" id="descricaoProduto" placeholder=" digite a descrição do produto" cols="40" rows="10"></textarea>
+            <input type="submit" value="Enviar">
+            <p class="erro oculta" id="erroProduto">Produto já cadastrado, altere o nome do produto</p>
+
+        </form>
+
+        <div id="produtoCadastrado">
+
+        </div>
+
+    </section>
+
+    <script src="atividade1.js"></script>
     
 </body>
 </html>
