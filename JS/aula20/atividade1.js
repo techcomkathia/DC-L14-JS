@@ -81,3 +81,6 @@ cadastroProduto.addEventListener("submit", function(evento){
     erroProduto.classList.add("oculta")
 }
 )
+
+//DESAFIO!  Ajuste a função passada como callback para o evento de submit do formulário de forma que ela execute outras funções que terão apenas uma competencia. Exemplo: validar preenchimento dos campos, mostrar erro, verificar produto duplicado, limpar formulário, montar card de produto, etc.
+//Esse ajuste deixa o código mais simples, desacoplado e reutilizável. 
