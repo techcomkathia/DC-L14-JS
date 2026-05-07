@@ -56,13 +56,13 @@
 
         <form action="">
             <p>Comanda automática. Digite os valores e automaticamente os campos de Taxa de Serviço, Subtotal e Total serão preenchidos</p>
-            <input type="number" id="entrada" placeholder="digite o valor da entrada">
+            <input type="number" id="entrada" placeholder="digite o valor da entrada" min="0"> 
 
-            <input type="number" id="pratoPrincipal" placeholder="digite o valor do prato principal">
+            <input type="number" id="pratoPrincipal" placeholder="digite o valor do prato principal" min="0">
 
-            <input type="number" id="bebidas" placeholder="digite o valor das bebidas">
+            <input type="number" id="bebidas" placeholder="digite o valor das bebidas" min="0">
 
-            <input type="number" id="sobremesa" placeholder="digite o valor da sobremesa">
+            <input type="number" id="sobremesa" placeholder="digite o valor da sobremesa" min="0">
 
             <label for="taxaServico">Taxa de Serviço</label>
             <input type="number" id="taxaServico" placeholder="Taxa de serviço" value="0" disabled>
