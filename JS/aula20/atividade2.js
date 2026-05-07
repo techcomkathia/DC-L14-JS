@@ -14,7 +14,7 @@ const sobremesa = document.querySelector("#sobremesa")
 const taxaServico = document.querySelector("#taxaServico")
 const subTotal = document.querySelector("#subTotal")
 const total = document.querySelector("#total")
-const limparComanda = document.querySelector("#atividade2 button")
+const btnlimparComanda = document.querySelector("#atividade2 button")
 
 //calcular taxa de serviço
 //calcular subtotal
@@ -46,62 +46,63 @@ function calcularTaxaServico(porcentagem){
 //ela atualiza o valor do campo atual e calcula todos os outros campos que não são permitidos serem alterados ou preenchidos
 
 //TODO: Verificar erro de atualização dos valores dos campos de valorTaxaServico, valorSubTotal e valorTotal na tela
-function atualizarValor(variavel, objetoCampo){
-    variavel = Number(objetoCampo.value)
-    //atualiza as variaveis globais
-    calcularSubTotal()
-    calcularTaxaServico(10)
-    calcularTotal()
-
-    //atualizar os campos do formulario (interface)
-    subTotal.value = valorSubTotal
-    taxaServico.value = valorTaxaServico
-    total.value = valorTotal
-
+//correção
+function atualizarValor(nomeCampo){
+    switch (nomeCampo) {
+        case "entrada":
+            valorEntrada = Number(entrada.value)
+            break;
+        case "pratoPrincipal":
+            valorPratoPrincipal = Number(pratoPrincipal.value)
+            break;
+        case "bebidas":
+            valorBebidas = Number(bebidas.value)
+            break;
+        case "sobremesa":
+            valorSobremesa = Number(sobremesa.value)
+            break;
+    }
 
 }
 
-//adicionar um escutador de eventos para cada um dos campos do formulário (evento de mudança de valor)
-
-entrada.addEventListener("change", () => {
-    valorEntrada = Number(entrada.value)
-    calcularConta()  
-    
-}
-
-)
-pratoPrincipal.addEventListener("change", () => {
-    valorPratoPrincipal = Number(pratoPrincipal.value)
-
-    calcularConta()
-}
-
-)
-bebidas.addEventListener("change", () => {
-    valorBebidas = Number(bebidas.value)
-
-    calcularConta()
-    
-})
-sobremesa.addEventListener("change", () => {
-    valorSobremesa = Number(sobremesa.value)
-
-    calcularConta()
-    
-})
-
-
-function calcularConta(){
-
-    calcularSubTotal()
-    calcularTaxaServico(10)
-    calcularTotal()
-
-    //atualizar os campos do formulario (interface)
+function atualizarInterface(){
     subTotal.value = valorSubTotal
     taxaServico.value = valorTaxaServico
     total.value =  valorTotal
 }
+
+function limparComanda(){
+    entrada.value = 0
+    pratoPrincipal.value = 0
+    bebidas.value = 0
+    sobremesa.value = 0
+    subTotal.value = 0
+    taxaServico.value = 0
+    total.value = 0
+
+}
+
+function calcularConta(campo){
+    atualizarValor(campo)
+
+    calcularSubTotal()
+    calcularTaxaServico(10)
+    calcularTotal()  
+
+    atualizarInterface()
+
+}
+
+
+
+
+
+entrada.addEventListener("change", () => calcularConta('entrada'))
+pratoPrincipal.addEventListener("change", () => calcularConta('pratoPrincipal'))
+bebidas.addEventListener("change", () => calcularConta('bebidas'))
+sobremesa.addEventListener("change", () => calcularConta('sobremesa'))
+
+
 
 
 
