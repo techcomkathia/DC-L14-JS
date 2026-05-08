@@ -136,11 +136,9 @@ function limparComanda(){
  */
 function calcularConta(campo){
     atualizarValor(campo)
-
     calcularSubTotal()
     calcularTaxaServico(10)
     calcularTotal()  
-
     atualizarInterface()
 }
 
