@@ -1,0 +1,7 @@
+Novos recursos para interface do projeto do cardápio.
+
+A ideia agora é que o usuário possa modificar a quantidade de um mesmo produto diretamente no carrinho. 
+Regras:
+* Ao adicionar 2 x o mesmo produto ele não será mostrado 2 x no cardápio. Será modificada apenas a quantidade de itens.
+* Não será contabilizado 0 produtos. Ao diminuir a quantidade para 0 o produto será retirado do carrinho. 
+* Ao finalizar a compra mostre uma mensagem e 'limpe' o carrinho
