@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .oculta{
+            display: none
+        }
+
+        .erro{
+            color: red;
+        }
+
+        .claro{
+            background-color: white;
+        }
+
+        .escuro{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="quebrada.png" alt="quebrada " width="200" id="imgLampada">
+    <p id="erro" class="erro oculta"></p>
+    <button id="btnApagar" >Apagar</button>
+    <button id="btnAcender">Acender</button>
+    <button id="btnQuebrar">Quebrar</button>
+    <button id="btnTrocar">Trocar</button>
+
+    <script>
+        const imgLampada = document.getElementById("imgLampada")
+        const btnApagar = document.getElementById("btnApagar")
+        const btnAcender = document.getElementById("btnAcender")
+        const btnQuebrar = document.getElementById("btnQuebrar")
+        const btnTrocar = document.getElementById("btnTrocar")
+        const erro = document.getElementById("erro")
+
+        const dados={
+            acesa: {img: 'acesa.png', texto: 'acesa', tema: 'claro'},
+            apagada: {img: 'apagada.png', texto: 'apagada', tema: 'escuro'},
+            quebrada: {img: 'quebrada.png', texto: 'quebrada', tema: 'escuro'},
+
+
+        }
+
+        function trocarImagem(objImagem){
+            imgLampada.src = objImagem.img
+            imgLampada.alt = objImagem.texto
+            document.body.classList = objImagem.tema
+        }
+
+        function verificarEstadoLampada(){
+            if(imgLampada.alt === 'acesa'){
+                //ocultar o erro 
+                erro.classList.add("oculta")
+               return true
+            }else if(imgLampada.alt === 'apagada'){
+                //ocultar o erro
+                erro.classList.add("oculta")
+                return true
+            }
+            else if(imgLampada.alt === 'quebrada'){
+                //mostra o erro
+                erro.classList.remove("oculta")
+                erro.textContent = "Lampada Quebrada não pode ser acesa ou apagada"
+                return false
+            }
+          
+        }
+
+        //criar a função que será vinculada aos botões acender, apagar, quebrar e trocar, incluindo a execução da funcao verificarEstadoLampada e trocarImagem
+
+        btnApagar.addEventListener("click", function(){
+            if(verificarEstadoLampada()){
+
+                trocarImagem(dados.apagada)
+            }
+        })
+
+        btnAcender.addEventListener("click", function(){
+            if(verificarEstadoLampada()){
+                trocarImagem(dados.acesa)
+            }
+        })
+
+        btnQuebrar.addEventListener("click", function(){
+            if(verificarEstadoLampada()){
+                trocarImagem(dados.quebrada)
+            }
+        })
+
+        btnTrocar.addEventListener("click", function(){
+            if(verificarEstadoLampada()){
+                trocarImagem(dados.apagada)
+            }
+        })
+
+        btnApagar.addEventListener("click", function(){
+
+            verificarEstadoLampada()
+
+            imgLampada.src = dados.apagada.img
+            imgLampada.alt = dados.apagada.texto
+            document.body.classList = dados.apagada.tema
+        })
+
+
+
+
+
+        
+          
+    </script>
+    
+</body>
+</html>
