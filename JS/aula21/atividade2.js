@@ -34,7 +34,7 @@ function buscarFilme(textoBusca){
 
 
 function montarTela(objeto){
-
+// inserido o laço for para percorrer todo o array. Em caso de renderização apenas do primeiro filme, comentar o for e substituir o 'item' por 0
     for(let item = 0; item < objeto.Search.length; item++){
         const cardFilme = document.createElement('div')
         const imagemPoster = document.createElement('img')
