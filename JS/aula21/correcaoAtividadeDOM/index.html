@@ -94,6 +94,7 @@
             }
         })
 
+        //TODO: validar se a lampada esta quebrada e permitir que apenas para o 'trocar lampada' seja executada a troca da imagem e do atributo, por uma lampada apagada.
         btnTrocar.addEventListener("click", function(){
             if(verificarEstadoLampada()){
                 trocarImagem(dados.apagada)
