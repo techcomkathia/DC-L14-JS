@@ -1,5 +1,5 @@
 //crie uma interface que tenha um campo de input e um botão. O usuário usará esse campo para fazer uma pesquisa de filme ou série. 
-//use a api da OMDB para buscar o filme ou serie. Mostre os dados do primeiro filme ou serie na interface.
+//use a api da OMDB para buscar o filme ou serie. Mostre os dados do primeiro filme (depois evolua para mostrar todos os filmes) ou serie na interface.
 
 //EVENTOS : click 
 //métodos de seleção de elementos: querySelector, querySelectorAll
