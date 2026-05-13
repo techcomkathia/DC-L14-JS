@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 22</title>
+    <!-- link do bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Aula 22</h1>
+
+    <section id="tratamentoErros" class="border b-5 b-dark p-5">
+        <h2 id="tituloTeste">Tratamento de Erros com try...catch no JavaScript</h2>
+
+        <p>
+            O <strong>try...catch</strong> é utilizado para evitar que erros interrompam a execução do programa.
+            Ele permite capturar erros e definir uma ação personalizada quando algo dá errado.
+        </p>
+
+        <h3>Estrutura Básica</h3>
+
+        <pre class="bg-dark text-light p-5">
+            try {
+                // código que pode gerar erro
+            } catch (erro) {
+                // tratamento do erro
+            }
+        </pre>
+
+        <h3>Exemplo</h3>
+
+        <pre class="bg-dark text-light p-5">
+            try {
+                let resultado = numero + 10
+                console.log(resultado)
+            } catch (erro) {
+                console.log("Ocorreu um erro!")
+            }
+        </pre>
+
+        <p>
+            No exemplo acima, a variável <strong>numero</strong> não existe, então o JavaScript gera um erro.
+            O <strong>catch</strong> captura esse erro e exibe uma mensagem no console.
+        </p>
+
+        <h3>Objeto de Erro</h3>
+
+        <p>
+            O parâmetro do <strong>catch</strong> contém informações sobre o erro ocorrido.
+        </p>
+
+        <pre class="bg-dark text-light p-5">
+            try {
+                console.log(usuario.nome)
+            } catch (erro) {
+                console.log(erro.message)
+            }
+        </pre>
+
+        <h3>finally</h3>
+
+        <p>
+            O bloco <strong>finally</strong> é executado sempre, independentemente de ocorrer erro ou não.
+        </p>
+
+        <pre class="bg-dark text-light p-5">
+            try {
+                console.log("Executando...")
+            } catch (erro) {
+                console.log("Erro encontrado")
+            } finally {
+                console.log("Fim do processo")
+            }
+        </pre>
+    </section>
+
+    <section id="funcoesAsyncAwait" class="border b-5 b-dark p-5 d-none" >
+        <h2>Funções Async e Await no JavaScript</h2>
+
+        <p>
+            As palavras-chave <strong>async</strong> e <strong>await</strong> são utilizadas para trabalhar com
+            operações assíncronas de forma mais simples e organizada.
+        </p>
+
+        <h3>Função Async</h3>
+
+        <p>
+            Uma função marcada com <strong>async</strong> sempre retorna uma Promise.
+        </p>
+
+        <pre class="bg-dark text-light p-5">
+            async function mensagem() {
+                return "Olá Mundo!"
+            }
+        </pre>
+
+        <h3>Await</h3>
+
+        <p>
+            O <strong>await</strong> faz o JavaScript esperar o resultado de uma operação assíncrona antes de continuar.
+            Ele só pode ser utilizado dentro de funções async.
+        </p>
+
+        <pre class="bg-dark text-light p-5">
+            async function carregarDados() {
+                let resposta = await fetch("https://api.exemplo.com")
+
+                console.log(resposta)
+            }
+        </pre>
+
+        <h3>Exemplo Completo</h3>
+
+        <pre class="bg-dark text-light p-5">
+            async function buscarUsuario() {
+                try {
+                    let resposta = await fetch("https://jsonplaceholder.typicode.com/users/1")
+
+                    let usuario = await resposta.json()
+
+                    console.log(usuario)
+                } catch (erro) {
+                    console.log("Erro ao buscar usuário")
+                }
+            }
+
+            buscarUsuario()
+        </pre>
+
+        <p>
+            Nesse exemplo, o <strong>await</strong> aguarda a resposta da API e a conversão dos dados para JSON.
+            O <strong>try...catch</strong> é utilizado para tratar possíveis erros durante a requisição.
+        </p>
+    </section>
+
+    <script src="funcoesAsync.js"></script>
+    
+    
+</body>
+</html>
