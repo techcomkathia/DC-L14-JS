@@ -1,0 +1,1 @@
+// existe uma diferença com relação a forma com que a informação foi enviada. O PUT envia toda a informação do recurso para ser atualizada, enquanto o PATCH envia apenas as informações que foram modificadas.

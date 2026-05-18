@@ -15,3 +15,61 @@
 //fetch (com url e objeto de configuração)
 //await (funções assíncronas e armazenamento de dados assíncronos)
 //try catch
+
+//todas as variaveis globais que representam elementos do dom devem ser declaradas 
+const formulario = document.querySelector("#formCadastro")
+const username = document.querySelector("#userName")
+const email = document.querySelector("#userEmail")
+const password = document.querySelector("#userPassword")
+const confirmarPassword = document.querySelector("#userConfirmPassword")
+
+//função para cadastro do usuario. Essa função vai fazer o post na api
+
+async function cadastrarUsuario(objUsuario) {
+    const respostaApi = await fetch("https://fakestoreapi.com/users", {
+        method: "POST",
+        body: JSON.stringify(objUsuario),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+
+    const usuarioCadastrado = await respostaApi.json()
+    console.log(usuarioCadastrado)
+
+    alert("Usuário criado com sucesso")
+}
+
+//função para validação das senhas
+async function validarSenhas(objUsuario) {
+    if (objUsuario.password != objUsuario.confirmarPassword) {
+        alert("Senhas diferentes")
+        return
+    }
+    
+    cadastrarUsuario(objUsuario)
+     //limpeza condicional dos campos do formulario
+        username.value = ""
+        email.value = ""
+        password.value = ""
+        confirmarPassword.value = ""
+    
+    
+}
+
+//criar o escutador de eventos para submissão do formulário
+formulario.addEventListener("submit", async (e) => {
+    e.preventDefault()
+
+    const objUsuario = {
+        username: username.value,
+        email: email.value,
+        password: password.value,
+        confirmarPassword: confirmarPassword.value
+    }
+
+    validarSenhas(objUsuario)    
+    
+
+    
+})
