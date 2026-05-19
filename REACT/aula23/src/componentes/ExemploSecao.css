@@ -1,0 +1,18 @@
+.secao{
+    border: 3px solid red;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.secao h1{
+    color: red;
+}
+
+.secao.azul{
+    border-color: blue;
+}
+
+.azul h1{
+    color: blue;
+}
