@@ -5,6 +5,7 @@ import Tabuada from './componentes/Tabuada'
 import RenderizacaoLista from './componentes/RenderizacaoLista'
 import ListagemProduto from './componentes/ListagemProduto'
 import InputTeste from './componentes/InputTeste'
+import CadastroUsuario from './componentes/CadastroUsuario'
 
 function App() {
   let x = 1
@@ -52,6 +53,8 @@ function App() {
       </div>
 
       <InputTeste></InputTeste>
+
+      <CadastroUsuario></CadastroUsuario>
 
       
     </>
