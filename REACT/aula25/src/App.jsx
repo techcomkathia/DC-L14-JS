@@ -71,15 +71,21 @@ function App() {
         </ul>
       </div>
 
-      <div id='atividade2' className='d-none'>
-        <ListagemProdutos titulo={'Produtos em Destaque'} listaProdutos={produtos}/>
+      <div id='atividade2' >
+        <ListagemProdutos titulo={'Produtos em Promocao'} listaProdutos={produtos} promocao={true}/>
+
+        <ListagemProdutos titulo={'Produtos Não Promocionais'} listaProdutos={produtos} />
+
+        <ListagemProdutos titulo={'Lista Vazia'} listaProdutos={[]} />
       </div>
 
-      <RenderizacaoCondicional cor={'vermelho'}/>
+      <div id='atividade3' className='d-none'>
+        <RenderizacaoCondicional cor={'vermelho'}/>
       <RenderizacaoCondicional cor={'cleitinho'}/>
       <RederizacaoDiferentes itens={frutas}/>
       <RederizacaoDiferentes itens={[]}/>
       <RederizacaoDiferentes />
+      </div>
     </>
   )
 }
