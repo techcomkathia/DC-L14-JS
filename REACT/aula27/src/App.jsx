@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Rotas from './rotas/Rotas' 
 
 import './App.css'
+import Header from './componentes/Header'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,8 +16,10 @@ function App() {
     <>
       <h1>Aula 27</h1>
       <p>Conteúdo fora do roteamento. Permanece sempre visível e inalterado independente das rotas</p>
+      
 
       <BrowserRouter>
+        <Header />
         <Rotas />
       </BrowserRouter>
     </>
