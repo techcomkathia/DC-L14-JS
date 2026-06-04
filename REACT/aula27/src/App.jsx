@@ -8,19 +8,23 @@ import Rotas from './rotas/Rotas'
 
 import './App.css'
 import Header from './componentes/Header'
-
+import Layout from './componentes/Layout'
 function App() {
   const [count, setCount] = useState(0)
 
+
   return (
     <>
-      <h1>Aula 27</h1>
-      <p>Conteúdo fora do roteamento. Permanece sempre visível e inalterado independente das rotas</p>
+      <div style={{display:'none'}}>
+        <h1>Aula 27</h1>
+        <p>Conteúdo fora do roteamento. Permanece sempre visível e inalterado independente das rotas</p>
+      </div>
       
 
       <BrowserRouter>
-        <Header />
-        <Rotas />
+        <Layout>
+          <Rotas />
+        </Layout>
       </BrowserRouter>
     </>
   )

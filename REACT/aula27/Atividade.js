@@ -61,3 +61,14 @@ const products = [
     image: "https://placehold.co/300x200?text=Monitor"
   }
 ]
+
+/* -------------------- Atividade 3 ---------------------
+Com base na estrutura de contexto de produtos criada, faça uma página que permita cadastrar um novo produto. Utilize o método Date.now() para gerar um ID para o produto.
+Peça em um formulaire o nome, preco e descricao do produto e imagem. Ao clicar em cadastrar, adicione o produto ao array de produtos, utilizando a função adicionarProduto do contexto ProdutosContext.
+Após adicionar um produto verifique se ele está sendo renderizado na tela de produtos.
+
+Na página de produtos faça a renderização de Cards com o nome, preco e imagem do produto obtidos do contexto.
+
+Na página principal faça uma renderização do número total de produtos cadastrados no contexto. Exemplo: 'Aproveite os produtos de nossa loja. Temos x produtos cadastrados!'
+
+*/
