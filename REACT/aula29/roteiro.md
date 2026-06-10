@@ -367,6 +367,8 @@ src/
 │   ├── Header.jsx
 │   ├── Footer.jsx
 │   ├── LivroCard.jsx
+├── rotas/
+│   ├── rotasApp.js
 │
 ├── servicos/
 │   ├── api.js

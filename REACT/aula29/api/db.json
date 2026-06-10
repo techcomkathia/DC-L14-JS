@@ -1,5 +1,5 @@
 {
-    "livros": [
+   "livros": [
     {
       "id": 1,
       "nome": "JavaScript Moderno",
@@ -181,6 +181,21 @@
       "nome": "Ana Costa",
       "email": "ana@email.com",
       "senha": "123456",
+      "endereco": {
+        "logradouro": "Rua São José",
+        "numero": "78",
+        "complemento": "Casa",
+        "bairro": "Centro",
+        "cidade": "Natal",
+        "estado": "RN",
+        "cep": "59000-000"
+      }
+    },
+    {
+      "id": 4,
+      "nome": "Cleitinho Silva",
+      "email": "cleitinho@email.com",
+      "senha": "sache",
       "endereco": {
         "logradouro": "Rua São José",
         "numero": "78",
