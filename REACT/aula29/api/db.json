@@ -1,0 +1,194 @@
+"livros": [
+    {
+      "id": 1,
+      "nome": "JavaScript Moderno",
+      "preco": 89.9,
+      "imagem": "https://placehold.co/600x400/orange/white?text=JavaScript+Moderno",
+      "compras": 1250,
+      "nota": 4.8,
+      "resumo": "Um guia completo sobre JavaScript moderno, abordando ES6+, programação assíncrona, módulos e boas práticas.",
+      "qtdPaginas": 420,
+      "autor": "Carlos Mendes",
+      "ano": 2023,
+      "desconto": 15,
+      "categoria": "Programação",
+      "editora": "Tech Books",
+      "comentarios": [
+        {
+          "texto": "Excelente conteúdo para quem deseja evoluir em JavaScript.",
+          "nota": 5,
+          "nomeUsuario": "Ana Souza",
+          "data": "2025-01-15"
+        },
+        {
+          "texto": "Didático e atualizado.",
+          "nota": 4,
+          "nomeUsuario": "Pedro Lima",
+          "data": "2025-02-10"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "React na Prática",
+      "preco": 99.9,
+      "imagem": "https://placehold.co/600x400/blue/white?text=React+na+Pratica",
+      "compras": 980,
+      "nota": 4.7,
+      "resumo": "Aprenda React criando aplicações modernas utilizando hooks, context API e roteamento.",
+      "qtdPaginas": 380,
+      "autor": "Juliana Rocha",
+      "ano": 2024,
+      "desconto": 10,
+      "categoria": "Programação",
+      "editora": "Dev House",
+      "comentarios": [
+        {
+          "texto": "Ótimos exemplos práticos.",
+          "nota": 5,
+          "nomeUsuario": "Lucas Oliveira",
+          "data": "2025-03-05"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Node.js para APIs",
+      "preco": 79.9,
+      "imagem": "https://placehold.co/600x400/green/white?text=Node.js+para+APIs",
+      "compras": 850,
+      "nota": 4.6,
+      "resumo": "Desenvolvimento de APIs REST com Node.js, Express e integração com bancos de dados.",
+      "qtdPaginas": 350,
+      "autor": "Rafael Costa",
+      "ano": 2022,
+      "desconto": 20,
+      "categoria": "Backend",
+      "editora": "Code Press",
+      "comentarios": [
+        {
+          "texto": "Muito útil para projetos reais.",
+          "nota": 5,
+          "nomeUsuario": "Mariana Alves",
+          "data": "2025-01-22"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Python para Dados",
+      "preco": 109.9,
+      "imagem": "https://placehold.co/600x400/purple/white?text=Python+para+Dados",
+      "compras": 1430,
+      "nota": 4.9,
+      "resumo": "Introdução à análise de dados com Python, Pandas, NumPy e visualização de dados.",
+      "qtdPaginas": 500,
+      "autor": "Fernanda Ribeiro",
+      "ano": 2024,
+      "desconto": 12,
+      "categoria": "Data Science",
+      "editora": "Data Books",
+      "comentarios": [
+        {
+          "texto": "Livro indispensável para iniciantes.",
+          "nota": 5,
+          "nomeUsuario": "João Pedro",
+          "data": "2025-04-01"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Power BI Essencial",
+      "preco": 69.9,
+      "imagem": "https://placehold.co/600x400/gold/white?text=Power+BI+Essencial",
+      "compras": 670,
+      "nota": 4.5,
+      "resumo": "Aprenda a criar dashboards, relatórios e análises de negócios com Power BI.",
+      "qtdPaginas": 290,
+      "autor": "Ricardo Nunes",
+      "ano": 2023,
+      "desconto": 8,
+      "categoria": "Business Intelligence",
+      "editora": "Analytics Press",
+      "comentarios": [
+        {
+          "texto": "Conteúdo objetivo e direto.",
+          "nota": 4,
+          "nomeUsuario": "Carla Silva",
+          "data": "2025-02-18"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Arquitetura de Software",
+      "preco": 119.9,
+      "imagem": "https://placehold.co/600x400/red/white?text=Arquitetura+de+Software",
+      "compras": 540,
+      "nota": 4.8,
+      "resumo": "Princípios e padrões para construção de sistemas escaláveis e de alta qualidade.",
+      "qtdPaginas": 610,
+      "autor": "Eduardo Martins",
+      "ano": 2021,
+      "desconto": 25,
+      "categoria": "Arquitetura",
+      "editora": "Software House",
+      "comentarios": [
+        {
+          "texto": "Livro avançado e muito completo.",
+          "nota": 5,
+          "nomeUsuario": "André Santos",
+          "data": "2025-01-30"
+        }
+      ]
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Maria Silva",
+      "email": "maria@email.com",
+      "senha": "123456",
+      "endereco": {
+        "logradouro": "Rua das Flores",
+        "numero": "120",
+        "complemento": "Apto 201",
+        "bairro": "Centro",
+        "cidade": "Fortaleza",
+        "estado": "CE",
+        "cep": "60000-000"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "João Pereira",
+      "email": "joao@email.com",
+      "senha": "123456",
+      "endereco": {
+        "logradouro": "Av. Beira Mar",
+        "numero": "450",
+        "complemento": "",
+        "bairro": "Meireles",
+        "cidade": "Fortaleza",
+        "estado": "CE",
+        "cep": "60165-000"
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Ana Costa",
+      "email": "ana@email.com",
+      "senha": "123456",
+      "endereco": {
+        "logradouro": "Rua São José",
+        "numero": "78",
+        "complemento": "Casa",
+        "bairro": "Centro",
+        "cidade": "Natal",
+        "estado": "RN",
+        "cep": "59000-000"
+      }
+    }
+  ]
+}
