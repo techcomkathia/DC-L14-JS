@@ -1,4 +1,5 @@
-"livros": [
+{
+    "livros": [
     {
       "id": 1,
       "nome": "JavaScript Moderno",
