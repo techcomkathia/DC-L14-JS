@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import {getUsuarios} from '../servicos/UsuarioServicos'
+import { useContext } from "react";
+import {UsuariosContexto} from '../contexto/UsuariosContexto.jsx'
+
+
 
 
 export default function CadastroUsuario() {
 
-    const [usuarios, setUsuarios] = useState([])
-
-    useEffect(() => {
-         getUsuarios().
-            then(setUsuarios)
-    }, []) //apenas na montagem da página será executado o consumo da api para a atualização dos usuarios
+    const {usuarios} = useContext(UsuariosContexto)
 
 
+    // crie um formulário com os campos de nome, email e senha, endereço com : logradouro, numero, complemento, bairro, cidade, estado e cep
+    //ao fazer o submit do formulário, valide os campos e caso estiverem corretos, faça a execução da função postUsuario que deve ser compartilhada/consumida pelo contexto.
+    // ao enviar o formulário, adicione o usuário ao array de usuários
 
 
     return (
