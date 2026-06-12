@@ -1,7 +1,7 @@
 {
-   "livros": [
+  "livros": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "JavaScript Moderno",
       "preco": 89.9,
       "imagem": "https://placehold.co/600x400/orange/white?text=JavaScript+Moderno",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "React na Prática",
       "preco": 99.9,
       "imagem": "https://placehold.co/600x400/blue/white?text=React+na+Pratica",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Node.js para APIs",
       "preco": 79.9,
       "imagem": "https://placehold.co/600x400/green/white?text=Node.js+para+APIs",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Python para Dados",
       "preco": 109.9,
       "imagem": "https://placehold.co/600x400/purple/white?text=Python+para+Dados",
@@ -99,7 +99,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Power BI Essencial",
       "preco": 69.9,
       "imagem": "https://placehold.co/600x400/gold/white?text=Power+BI+Essencial",
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "nome": "Arquitetura de Software",
       "preco": 119.9,
       "imagem": "https://placehold.co/600x400/red/white?text=Arquitetura+de+Software",
@@ -147,7 +147,7 @@
   ],
   "usuarios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Maria Silva",
       "email": "maria@email.com",
       "senha": "123456",
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "João Pereira",
       "email": "joao@email.com",
       "senha": "123456",
@@ -177,7 +177,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Ana Costa",
       "email": "ana@email.com",
       "senha": "123456",
@@ -192,7 +192,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Cleitinho Silva",
       "email": "cleitinho@email.com",
       "senha": "sache",
@@ -205,6 +205,52 @@
         "estado": "RN",
         "cep": "59000-000"
       }
+    },
+    {
+      "id": "6gOveoFhSG8",
+      "nome": "teste",
+      "email": "teste@teste",
+      "senha": "123",
+      "endereco": {
+        "logradouro": "teste",
+        "numero": "teste",
+        "complemento": "teste ",
+        "bairro": "123",
+        "cidade": "teste",
+        "estado": "teste",
+        "cep": "1234"
+      }
+    },
+    {
+      "id": "99j2Er8RO3s",
+      "nome": "cleitinho",
+      "email": "teste@teste",
+      "senha": "123",
+      "endereco": {
+        "logradouro": "teste",
+        "numero": "teste",
+        "complemento": "teste",
+        "bairro": "teste",
+        "cidade": "teste",
+        "estado": "123",
+        "cep": "123"
+      }
+    },
+    {
+      "id": "NE14NfmGDkQ",
+      "nome": "teste final ",
+      "email": "teste@final",
+      "senha": "123",
+      "endereco": {
+        "logradouro": "teste",
+        "numero": "teste",
+        "complemento": "teste",
+        "bairro": "teste",
+        "cidade": "teste",
+        "estado": "teste ",
+        "cep": "teste"
+      }
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
