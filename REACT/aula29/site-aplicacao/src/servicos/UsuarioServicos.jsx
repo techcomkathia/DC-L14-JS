@@ -40,11 +40,12 @@ export async function postUsuario(nome, email, senha, endereco = {
    cep: "00000-000"
 }){
    try{
-        const resposta = await fetch(`${url}usuarios`, 
+        const resposta = await fetch(`http://localhost:3000/usuarios`,
          {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
+               id: Date.now(),
                 nome: nome,
                 email: email,
                 senha: senha,
