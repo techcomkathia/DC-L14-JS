@@ -7,6 +7,14 @@ export const TituloSyled = styled.h2`
     margin:10px;
     padding:20px;
     border:2px solid pink;
+
+    &:hover{
+        background-color: #c3727e;
+
+        h2{
+            color:blue;
+        }
+    }
 `
 // utilização de variantes de css 
 // é possível utilizar as variáveis passadas para o styled component
