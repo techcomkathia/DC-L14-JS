@@ -47,6 +47,6 @@ export function TesteSyled({texto}){
             <ParagrafoStyled tamanho='pequeno' color='green'>Exemplo de Parágrafo Estilizado</ParagrafoStyled>
 
             <ParagrafoDetalheStyled tamanho='grande' color='green'>Intervalo :) Retornaremos de 20:25</ParagrafoDetalheStyled>
-        </div>
+        </div> 
     )
 }

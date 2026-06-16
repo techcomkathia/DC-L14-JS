@@ -44,7 +44,7 @@ Crie uma versão do cartão para livros em destaque.
     Espessura: 3px
     Considere destaque os livros com nota igual ou superior a 4.8.
 
-Crie duas versões do botão através das variantes: destalhe e comprar
+Crie duas versões do botão através das variantes: detalhe e comprar
     "Ver Detalhes" , variante destalhe → azul escuro
     "Comprar" → verde
     caso não seja detalhe ou compar o botão deve permecer com os estilos originais.
