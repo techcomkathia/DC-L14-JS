@@ -31,6 +31,22 @@ inner join autores as a
 	on l.autor_id = a.id_autor
 inner join categorias as c
 	on l.categoria_id =  c.id_categoria; -- on tabela.fk = tabela.id;
+    
+    
+-- Inserir uma categoria que não terá nenhum livro
+insert into categorias (nome) values ('Quadrinhos');
+
+-- selecionar todas as categorias e os livros delas, incluindo categorias que 
+-- não tem nenhum livro cadastrado
+select categorias.nome, livros.titulo
+from categorias
+left join livros
+ on categorias.id_categoria = livros.categoria_id;
+ 
+select categorias.nome, livros.titulo
+from categorias
+inner join livros
+ on categorias.id_categoria = livros.categoria_id;
 
 
 

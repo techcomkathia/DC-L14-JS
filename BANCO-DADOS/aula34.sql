@@ -28,7 +28,34 @@ select uf as 'estado', count(nomeProdutor) as 'quantidade de produtores por cida
 from produtor
 group by uf;
 
-
 select * from venda;
 
+-- ------------------- SELECT COM JOIN --------------------
+
+-- 1) Liste o nome de todos os itens e o nome dos seus respectivos produtores
+select distinct item.nomeItem , produtor.nomeProdutor 
+from venda
+inner join item
+	on venda.fkItem = item.idItem
+inner join produtor
+	on venda.fkprod = produtor.idProd;
+
+
+-- 2) Exiba o número da nota fiscal, data de emissão e o nome dos itens vendidos nela. 
+select nf.numeroNf, nf.dataNf, item.nomeItem
+from venda
+inner join nf
+	on venda.fkNf = nf.idNf
+inner join item
+	on venda.fkItem = item.idItem;
+
+-- 3) Mostre o nome dos produtores e o nome dos itens que eles vendem 
+
+select distinct  produtor.nomeProdutor, item.nomeItem 
+from venda
+inner join item
+	on venda.fkItem = item.idItem
+inner join produtor
+	on venda.fkprod = produtor.idProd
+order by produtor.nomeProdutor;
 
