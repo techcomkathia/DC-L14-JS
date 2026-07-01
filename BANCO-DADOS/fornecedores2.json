@@ -1,0 +1,27 @@
+[
+	{
+		"idItem" : 1,
+		"nomeItem" : "Notebook",
+		"valorUnit" : 3500.00
+	},
+	{
+		"idItem" : 2,
+		"nomeItem" : "Mouse ",
+		"valorUnit" : 150.00
+	},
+	{
+		"idItem" : 3,
+		"nomeItem" : "Teclado Mecânico ",
+		"valorUnit" : 280.00
+	},
+	{
+		"idItem" : 4,
+		"nomeItem" : "Monitor 24\"",
+		"valorUnit" : 900.00
+	},
+	{
+		"idItem" : 5,
+		"nomeItem" : "Headset ",
+		"valorUnit" : 448.00
+	}
+]
