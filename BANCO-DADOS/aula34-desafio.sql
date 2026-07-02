@@ -88,8 +88,48 @@ INSERT INTO matriculas(aluno_id,disciplina_id,nota1,nota2,faltas) VALUES
 (9,2,9.0,10.0,0),
 (10,4,5.5,6.0,8);
 
--- 1) Mostrar todos os alunos e o nome suas disciplinas, incluindo os que estão sem disciplina matriculada. (left join)
--- 2) Mostrar as disciplinas com os nomes de professores. Incluir APENAS as disciplinas com professores (inner join)
+-- 1) Mostrar todos os alunos e o nome suas disciplinas, 
+-- incluindo os que estão sem disciplina matriculada. (left join)
+
+select d.nome as 'nome disciplina' , a.nome as 'nome alunos'
+from disciplinas as d
+left join matriculas as m
+	on d.id = m.disciplina_id
+left join alunos as a
+	on m.aluno_id = a.id
+order by a.nome ;
+
+-- 2) Mostrar as disciplinas com os nomes de professores. 
+-- Incluir APENAS as disciplinas com professores (inner join)
+select * from disciplinas;
+
+select d.nome as 'disciplina' , p.nome as 'professor'
+from professores as p
+inner join disciplinas as d
+	on p.id = d.professor_id;
+
 -- 3) Faça uma seleção com o nome de todos os alunos e suas médias, 
 -- inclua também o nome da disciplina e a quantidade de faltas (inner join, coluna calculada (média))
+select a.nome as 'nome alunos',
+	d.nome as 'nome disciplina',
+    m.faltas, 
+    m.nota1,
+    m.nota2,
+    (m.nota1 + m.nota2)/2 as 'média'
+from disciplinas as d
+inner join matriculas as m
+	on d.id = m.disciplina_id
+inner join alunos as a
+	on m.aluno_id = a.id
+order by m.faltas;
+
 -- 4) Realize a contagem de quantos alunos existem por disciplina , mostrar o nome da disciplina. (inner join com count e group by)
+
+select d.nome as 'nome disciplina',
+		count(a.nome) as 'quantidade de alunos'	
+from disciplinas as d
+inner join matriculas as m
+	on d.id = m.disciplina_id
+inner join alunos as a
+	on m.aluno_id = a.id
+group by d.nome;
