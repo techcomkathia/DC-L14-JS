@@ -1,7 +1,4 @@
-//Produção do módulo bancário
-
-
-
+// 1 --Produção do módulo bancário
 
 //criação das funções do módulo bancário: abrir conta, depositar, sacar e extrato
 
@@ -14,3 +11,18 @@
 //função para extrato: receberá como parâmetro o objeto da conta, retornando o saldo atual da conta e mostrando uma mensagem no console com o saldo atual.
 
 //IMPORTE NO ARQUIVO main.js e teste as funções do módulo bancário
+
+
+
+
+// 2 --Leitura e escrita de arquivos com o módulo fs
+// crie 2 arquivos de texto:
+// texto1.txt: com algum conteúdo de sua escolha
+// texto2.txt: com algum conteúdo de sua escolha
+// concatene o conteúdo dos dois arquivos em um terceiro arquivo chamado texto3.txt.
+
+//Dica: caso use a função readFile, lembre-se que ela é assíncrona, então você precisará fazer a leitura do segundo arquivo dentro do callback da leitura do primeiro arquivo.
+//Caso use a função readFileSync, você poderá fazer a leitura dos dois arquivos de forma síncrona, sem precisar de callbacks, apenas armazenando o conteúdo de cada arquivo em uma variável e depois concatenando essas variáveis para escrever no terceiro arquivo.
+
+// Importante tratar os erros de leitura e escrita dos arquivos, caso ocorra algum erro, exibir uma mensagem no console com o erro ocorrido, de forma clara para o usuário.
+
