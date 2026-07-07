@@ -26,3 +26,18 @@
 
 // Importante tratar os erros de leitura e escrita dos arquivos, caso ocorra algum erro, exibir uma mensagem no console com o erro ocorrido, de forma clara para o usuário.
 
+
+/*
+
+Atividade 3 - Manipulação de arquivos JSON
+
+Crie um módulo que funcione como gestor de um banco de dados json.
+
+uma função para ler o conteúdo de um arquivo json e retornar o objeto javascript correspondente.
+
+uma função para escrever o conteúdo de um objeto javascript em cada uma das coleções do arquivo json.
+
+uma função para buscar um objeto dentro de uma coleção do arquivo json. A função deve receber como parâmetro o nome da coleção e o id do objeto a ser buscado, retornando o objeto correspondente OU uma mensagem de erro caso o objeto não seja encontrado.
+*Dica use o método find() para buscar o objeto dentro da coleção.
+*/
+
