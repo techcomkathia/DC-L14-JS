@@ -1,0 +1,4 @@
+Resultado da concatenação 
+Ola mundo!
+
+Conteudo que vai sobreescrever o anterior

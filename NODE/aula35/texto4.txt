@@ -1,0 +1,4 @@
+Resultado da concatenação 
+Ola mundo!
+
+Ola mundo!
