@@ -18,22 +18,39 @@ const DadosBanco = JSON.parse(fs.readFileSync("bancoJson.json", "utf-8")) // lei
 
 const servidor = http.createServer( (requisicao, resposta) => {
     //configuração do cabeçalho da resposta
-    resposta.writeHead(200, { "Content-Type": "application/json" })
+    
     // montar o objeto de resposta
     const objetoResposta = {
         status: 200,
         api: `API da atividade 1 da aula 36`,
-        frutas: DadosBanco.frutas.length,
-        verduras: DadosBanco.legumes.length,
-        dados: {
-            frutas: DadosBanco.frutas,
-            verduras: DadosBanco.legumes
-        }
     }
 
-    //escrever o corpo da resposta
+    if(requisicao.url == "/"){
+       resposta.writeHead(200, { "Content-Type": "application/json" })
+       objetoResposta.dados = {
+           frutas: DadosBanco.frutas,
+           verduras: DadosBanco.vegetais
+       }
+       objetoResposta.qtdFrutas = DadosBanco.frutas.length
+       objetoResposta.qtdVerduras = DadosBanco.vegetais.length
+
+    }
+    else if(requisicao.url == "/frutas"){
+       resposta.writeHead(200, { "Content-Type": "application/json" })
+       objetoResposta.dados = DadosBanco.frutas
+    }
+    else if(requisicao.url == "/verduras"){
+       resposta.writeHead(200, { "Content-Type": "application/json" })
+       objetoResposta.dados = DadosBanco.vegetais
+    }
+    else{
+        resposta.writeHead(404, { "Content-Type": "application/json" })
+        objetoResposta.status = 404
+        objetoResposta.mensagem = "Rota nao encontrada"
+        objetoResposta.erro = "404"
+    }
+
     resposta.write(JSON.stringify(objetoResposta))
-    //encerrar a resposta
     resposta.end()
 
 })
