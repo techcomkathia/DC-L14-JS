@@ -25,3 +25,10 @@ const resposta = {
 
 
 
+//Atividade 3 
+//Crie 2 rotas com o método POST : /frutas e /verduras
+//Valide se o corpo da requisição contém o campo nome e o campo preço. 
+//Antes de adicionar o objeto ao banco de dados adicione um id unico para cada objeto.
+//se o corpo da requisição nao contem os campos nome e preco, retorne um objeto com o status 400 e a mensagem "Campos nome e preco obrigatorios". A rota deve ser acessada na url http://localhost:3001/frutas
+
+

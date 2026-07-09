@@ -1,10 +1,8 @@
 const http = require("http") // permite criar um servidor http para chamadas do tipo GET, POST, PUT E DELETE
 const fs = require("fs") // permite trabalhar com arquivos, como leitura e escrita
+const { json } = require("stream/consumers")
 
-const db = {
-    colecao1 : ['colecao1.item1', 'colecao1.item2', 'colecao1.item3'],
-    colecao2 : ['colecao2.item1', 'colecao2.item2', 'colecao2.item3']
-}
+
 
 // -------------criação do servidor--------------
 /*
@@ -15,8 +13,9 @@ const server =  http.createServer((req, res) => {
     
     /*o método writeHead recebe dois parâmetros: status e headers(objeto de configuração para o tipo de conteudo da resposta). Trabalhando com rotas diferentes: 
     / rota raiz             /colecao1               /colecao2*/
+    let db = JSON.parse(fs.readFileSync("./bancoTeste.json", "utf-8"))
 
-    if(req.url == '/'){
+    if(req.method == 'GET' && req.url == '/'){
         res.writeHead(200, { "Content-Type": "application/json" })
         res.write(JSON.stringify(
             {
@@ -25,12 +24,29 @@ const server =  http.createServer((req, res) => {
             })
         )
     }
-    else if(req.url == '/colecao1'){
+    else if(req.method == 'GET'&& req.url == '/colecao1'){
         res.writeHead(200, { "Content-Type": "application/json" })
         res.write(JSON.stringify(
             {
                 status: 200,
                 response: db.colecao1
+            })
+        )
+    }
+    else if(req.method == 'POST' && req.url == '/colecao1'){
+        req.on('data', (data) => {
+            console.log(data.toString())
+            let dados = JSON.parse(data.toString()) //transformando os dados em json
+            db.colecao1.push(dados.conteudo)
+            console.log(db.colecao1)
+            //persistir os dados no banco json
+            fs.writeFileSync("./bancoTeste.json", JSON.stringify(db))
+        })
+        res.writeHead(200, { "Content-Type": "application/json" })
+        res.write(JSON.stringify(
+            {
+                status: 201,
+                response: 'item criado'
             })
         )
     }
