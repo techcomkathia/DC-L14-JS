@@ -1,1 +1,62 @@
-{"frutas":[{"id":1,"nome":"Banana","preco":2.5},{"id":2,"nome":"Maçã","preco":3},{"id":3,"nome":"Laranja","preco":2},{"id":4,"nome":"Abacaxi","preco":2.5},{"id":6,"nome":"Uva","preco":2.5}],"legumes":[{"id":4,"nome":"Cenoura","preco":1.5},{"id":5,"nome":"Batata","preco":2},{"id":6,"nome":"Tomate","preco":2.5},{"id":7,"nome":"beterraba","preco":1},{"id":8,"nome":"abobrinha","preco":1.5}],"vegetais":[]}
+{
+  "frutas": [
+    {
+      "id": 1,
+      "nome": "Banana",
+      "preco": 2.5
+    },
+    {
+      "id": 2,
+      "nome": "Maçã",
+      "preco": 3
+    },
+    {
+      "id": 3,
+      "nome": "Laranja",
+      "preco": 2
+    },
+    {
+      "id": 4,
+      "nome": "Abacaxi",
+      "preco": 2.5
+    },
+    {
+      "id": 6,
+      "nome": "Uva",
+      "preco": 2.5
+    },
+    {
+      "nome": "teste",
+      "preco": 10,
+      "id": 6
+    }
+  ],
+  "legumes": [
+    {
+      "id": 4,
+      "nome": "Cenoura",
+      "preco": 1.5
+    },
+    {
+      "id": 5,
+      "nome": "Batata",
+      "preco": 2
+    },
+    {
+      "id": 6,
+      "nome": "Tomate",
+      "preco": 2.5
+    },
+    {
+      "id": 7,
+      "nome": "beterraba",
+      "preco": 1
+    },
+    {
+      "id": 8,
+      "nome": "abobrinha",
+      "preco": 1.5
+    }
+  ],
+  "vegetais": []
+}

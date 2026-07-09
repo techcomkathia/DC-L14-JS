@@ -1,61 +1,106 @@
-/* const resposta = {
-    status: 200,
-    api: `API da atividade 1 da aula 36`,
-    frutas: 'quantidade De Frutas DoBanco',
-    verduras: 'quantidade De Verduras Do Banco',
-    dados: {
-        frutas: [],
-        verduras: []
-    }
-
-}*/
-
 const http = require("http") // permite criar um servidor http para chamadas do tipo GET, POST, PUT E DELETE
 const fs = require("fs") // permite trabalhar com arquivos, como leitura e escrita
 
-const DadosBanco = JSON.parse(fs.readFileSync("bancoJson.json", "utf-8")) // leitura do banco de dados e conversão para objeto javascript
+const DadosBanco = JSON.parse(fs.readFileSync("bancoJson.json", "utf-8"))
 
+const servidor = http.createServer((requisicao, resposta) => {
 
-const servidor = http.createServer( (requisicao, resposta) => {
-    //configuração do cabeçalho da resposta
-    
-    // montar o objeto de resposta
     const objetoResposta = {
         status: 200,
-        api: `API da atividade 1 da aula 36`,
+        api: "API da atividade 1 da aula 36",
     }
 
-    if(requisicao.url == "/"){
-       resposta.writeHead(200, { "Content-Type": "application/json" })
-       objetoResposta.dados = {
-           frutas: DadosBanco.frutas,
-           verduras: DadosBanco.vegetais
-       }
-       objetoResposta.qtdFrutas = DadosBanco.frutas.length
-       objetoResposta.qtdVerduras = DadosBanco.vegetais.length
+    if (requisicao.method == "GET" && requisicao.url == "/") {
+
+        resposta.writeHead(200, { "Content-Type": "application/json" })
+
+        objetoResposta.dados = {
+            frutas: DadosBanco.frutas,
+            verduras: DadosBanco.vegetais
+        }
+
+        objetoResposta.qtdFrutas = DadosBanco.frutas.length
+        objetoResposta.qtdVerduras = DadosBanco.vegetais.length
+    }
+
+    else if (requisicao.method == "GET" && requisicao.url == "/frutas") {
+
+        resposta.writeHead(200, { "Content-Type": "application/json" })
+        objetoResposta.dados = DadosBanco.frutas
 
     }
-    else if(requisicao.url == "/frutas"){
-       resposta.writeHead(200, { "Content-Type": "application/json" })
-       objetoResposta.dados = DadosBanco.frutas
+
+    else if (requisicao.method == "POST" && requisicao.url == "/frutas") {
+
+        requisicao.on("data", (data) => {
+
+            const dadosRequisicao = JSON.parse(data.toString())
+
+            if (!dadosRequisicao.nome || !dadosRequisicao.preco) {
+
+                resposta.writeHead(400, { "Content-Type": "application/json" })
+
+                objetoResposta.status = 400
+
+                // CORREÇÃO: a mensagem dizia "preço", mas a validação verifica "categoria".
+                objetoResposta.mensagem = "Fruta não criada. Os atributos nome e preco são obrigatórios."
+
+                // CORREÇÃO: encerra a resposta imediatamente para não continuar criando a fruta.
+                resposta.end(JSON.stringify(objetoResposta))
+                return
+            }
+
+            // CORREÇÃO: só executa se a validação passar.
+            const id = DadosBanco.frutas.length + 1
+
+            dadosRequisicao.id = id
+
+            DadosBanco.frutas.push(dadosRequisicao)
+
+            fs.writeFileSync(
+                "bancoJson.json",
+                JSON.stringify(DadosBanco, null, 2)
+            )
+
+            resposta.writeHead(201, { "Content-Type": "application/json" })
+
+            objetoResposta.status = 201
+            objetoResposta.mensagem = "Sucesso na criação da fruta."
+            objetoResposta.dados = dadosRequisicao
+
+            // CORREÇÃO: a resposta do POST deve ser enviada aqui,
+            // pois o processamento é assíncrono.
+            resposta.end(JSON.stringify(objetoResposta))
+        })
+
+        // CORREÇÃO: impede que o código continue até o write/end do final da função.
+        return
     }
-    else if(requisicao.url == "/verduras"){
-       resposta.writeHead(200, { "Content-Type": "application/json" })
-       objetoResposta.dados = DadosBanco.vegetais
+
+    else if (requisicao.method == "GET" && requisicao.url == "/verduras") {
+
+        resposta.writeHead(200, { "Content-Type": "application/json" })
+        objetoResposta.dados = DadosBanco.vegetais
+
     }
-    else{
+
+    else {
+
         resposta.writeHead(404, { "Content-Type": "application/json" })
+
         objetoResposta.status = 404
-        objetoResposta.mensagem = "Rota nao encontrada"
+        objetoResposta.mensagem = "Rota não encontrada."
         objetoResposta.erro = "404"
+
     }
 
+    // CORREÇÃO: este write/end atende apenas às rotas GET e 404.
+    // O POST não chega aqui porque possui um "return".
     resposta.write(JSON.stringify(objetoResposta))
     resposta.end()
 
 })
 
-//configuração da execução do servidor
 servidor.listen(3001, () => {
     console.log("Servidor rodando na porta 3001")
     console.log("http://localhost:3001")
