@@ -70,7 +70,10 @@ const servidor = http.createServer((requisicao, resposta) => {
 
             // CORREÇÃO: a resposta do POST deve ser enviada aqui,
             // pois o processamento é assíncrono.
+            //com o resposta.end() a requisição é encerrada .
             resposta.end(JSON.stringify(objetoResposta))
+            //resposta.write() : escreve dados na resposta, mas não finaliza a conexão.
+            //resposta.end() : finaliza a resposta. Se receber um argumento, escreve esse conteúdo e encerra a resposta ao mesmo tempo.
         })
 
         // CORREÇÃO: impede que o código continue até o write/end do final da função.
