@@ -27,3 +27,18 @@ resposta = {
     mensagem:"Erro ao criar fruta",
     erro:"Campos nome e preco sao obrigatórios"
 }
+
+
+/*Atividade 3 
+
+-Crie a rota get para /frutas/:id 
+-Caso de sucesso deve retornar um objeto com o status 200, o atributo dados que será um objeto com os dados da fruta.
+-Caso de erro deve retornar um objeto com o status 404 e o atributo erro com a mensagem "Fruta nao encontrada".
+*/
+
+
+/*DESAFIO:
+Faça adaptação do bancoJson para inserir 2 atributos nas frutas e nas verduras: quantidade e estado(verde,madura)
+-Atualize as validações do método post para frutas e verduras
+-Crie parametros de consulta para os atributos quantidade e estado
+*/
