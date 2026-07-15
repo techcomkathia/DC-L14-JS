@@ -1,5 +1,5 @@
 //importação dos módulos
-const express = require('express'); //vem em susbstituição ao módulo http
+const express = require('express') //vem em susbstituição ao módulo http
 const fs = require('fs'); // vai ser a camada de acesso aos dados (bancoJson)
 const dadosBanco = JSON.parse(fs.readFileSync('bancoTeste.json', 'utf-8'));
 
