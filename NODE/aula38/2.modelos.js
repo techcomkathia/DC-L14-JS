@@ -99,6 +99,16 @@ const Livros = conexaoBanco.define('livros', {
 })
 
 
+//livros -> autor n-1
+Livros.belongsTo(Autores, {foreignKey: 'autor_id'});
+//autores -> livros 1-n
+Autores.hasMany(Livros, {foreignKey: 'autor_id'});
+//livros -> categoria n-1
+Livros.belongsTo(Categorias, {foreignKey: 'categoria_id'});
+//categorias -> livros 1-n
+Categorias.hasMany(Livros, {foreignKey: 'categoria_id'});
+
+
 
 
 

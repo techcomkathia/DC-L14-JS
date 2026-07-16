@@ -1,6 +1,12 @@
 //Faça as definições dos modelos :
-const {Sequelize} = require('sequelize')
-const conexaoBanco = new Sequelize('projetos', 'root', 'km2026', {host: 'localhost', port: 3306, dialect: 'mysql'});
+const {Sequelize, DataTypes} = require('sequelize')
+const conexaoBanco = new Sequelize('projetos', 'root', 'km2026', {
+    host: 'localhost',
+    port: 3306,
+    dialect: 'mysql',
+    logger: false //desabilita o logger dos comandos sql mostrados no terminal
+}
+);
 
 /*Projects
 Columns:
@@ -26,11 +32,6 @@ const ProjectsModel = conexaoBanco.define('projects', {
         type: DataTypes.DATEONLY,
         allowNull: false
     }
-},
-{
-    tableName: 'projects',
-    timestamps: false
-    //porque a tabela no banco de dados nao tem o campo created_at e updated_at, mas já tem dados 
 })
 
 /*users
@@ -64,12 +65,7 @@ const UsersModel = conexaoBanco.define('users', {
         allowNull: false,
         unique: true
     }
-    },
-{
-    tableName: 'users',
-    timestamps: false
-    //porque a tabela no banco de dados nao tem o campo created_at e updated_at, mas já tem dados 
-}
+    }
 )
 
 /*users_has_projects
@@ -93,22 +89,32 @@ const UsersProjectsModel = conexaoBanco.define('users_has_projects', {
             key: 'id'
         }
     }
-},
-{
-    tableName: 'users_has_projects',
-    timestamps: false
-    //porque a tabela no banco de dados nao tem o campo created_at e updated_at, mas já tem dados 
 }
 )
 
 //Importante: criar um outro objeto de conexão ao banco de dados, para trabalhar com o segundo banco de dados. Use o banco com as tabelas que existem localmente no seu computador, caso os nomes sejam diferentes.
+
+
+UsersProjectsModel.belongsToMany(ProjectsModel, {foreignKey: 'project_id'})
+UsersProjectsModel.belongsToMany(UsersModel, {foreignKey: 'users_id'})
+
+
+
+
+/*Teste de conexão e sincronização*/
 conexaoBanco.authenticate()
     .then(() => {
+        conexaoBanco.sync({alter: true}) //atualiza as tabelas para corresponder ao modelo
+        //vai realizar a criação das 2 colunas gerenciadas pelo sequelize (created_at e updated_at)
         console.log('Conectado ao banco de dados')
     }).catch(() => {
         console.log('Erro ao se conectar ao banco de dados')
     })
 
+
+
+
+/* Execução dos testes dos métodos dos modelos */
 ProjectsModel.create({
     name: 'projeto 1',
     description: 'description 1',
@@ -119,7 +125,7 @@ ProjectsModel.create({
     console.log(error)
 })
 
-UsersModel.create({
+/*UsersModel.create({
     name: 'user 1',
     username: 'username 1',
     password: 'password 1',
@@ -137,4 +143,4 @@ UsersProjectsModel.create({
     console.log(result.dataValues)
 }).catch((error) => {
     console.log(error)
-})
+})*/
