@@ -95,8 +95,8 @@ const UsersProjectsModel = conexaoBanco.define('users_has_projects', {
 //Importante: criar um outro objeto de conexão ao banco de dados, para trabalhar com o segundo banco de dados. Use o banco com as tabelas que existem localmente no seu computador, caso os nomes sejam diferentes.
 
 
-UsersProjectsModel.belongsToMany(ProjectsModel, {foreignKey: 'project_id'})
-UsersProjectsModel.belongsToMany(UsersModel, {foreignKey: 'users_id'})
+// UsersProjectsModel.belongsToMany(ProjectsModel, {foreignKey: 'project_id'})
+// UsersProjectsModel.belongsToMany(UsersModel, {foreignKey: 'users_id'})
 
 
 
@@ -115,15 +115,15 @@ conexaoBanco.authenticate()
 
 
 /* Execução dos testes dos métodos dos modelos */
-ProjectsModel.create({
-    name: 'projeto 1',
-    description: 'description 1',
-    date: '2021-01-01'
-}).then((result) => {
-    console.log(result.dataValues)
-}).catch((error) => {
-    console.log(error)
-})
+// ProjectsModel.create({
+//     name: 'projeto 1',
+//     description: 'description 1',
+//     date: '2021-01-01'
+// }).then((result) => {
+//     console.log(result.dataValues)
+// }).catch((error) => {
+//     console.log(error)
+// })
 
 /*UsersModel.create({
     name: 'user 1',
@@ -144,3 +144,5 @@ UsersProjectsModel.create({
 }).catch((error) => {
     console.log(error)
 })*/
+
+module.exports = {ProjectsModel, UsersModel, UsersProjectsModel}

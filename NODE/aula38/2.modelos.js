@@ -96,6 +96,10 @@ const Livros = conexaoBanco.define('livros', {
             key: 'id_categoria'
         }
     }    
+},
+{
+    tableName: 'livros',
+    timestamps: false
 })
 
 
@@ -110,8 +114,7 @@ Categorias.hasMany(Livros, {foreignKey: 'categoria_id'});
 
 
 
-
-
+module.exports = {Categorias, Autores, Livros}
 
 
 
