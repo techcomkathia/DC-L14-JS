@@ -30,4 +30,4 @@ const Usuarios = servidorBanco.define('usuarios', {
 
 module.exports = Usuarios
 
-Usuarios.sync({force: true}).then(() => console.log('Tabela criada com sucesso')).catch((erro) => console.log(erro))
+//Usuarios.sync({alter: true}).then(() => console.log('Tabela criada com sucesso')).catch((erro) => console.log(erro))
