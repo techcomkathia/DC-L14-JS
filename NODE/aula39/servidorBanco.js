@@ -12,7 +12,7 @@ const conexaoBanco = new Sequelize('aula39_l14', 'root', 'km2026', {
 conexaoBanco.authenticate(  
 )
 .then(() => {
-    conexaoBanco.sync({alter: true})
+    //conexaoBanco.sync({alter: true})
     console.log('Conectado ao banco de dados')
 }).catch(() => {
     console.log('Erro ao se conectar ao banco de dados')
