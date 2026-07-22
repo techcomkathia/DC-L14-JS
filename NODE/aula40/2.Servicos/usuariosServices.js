@@ -1,3 +1,4 @@
+const e = require('express')
 const Usuarios = require('../1.Modelo/usuariosModel')
 const bcrypt = require('bcrypt')
 
@@ -6,6 +7,35 @@ const bcrypt = require('bcrypt')
 async function criarUsuario(nome, nomeUsuario, email, senha){
     //hash da senha
     try{
+        
+        
+        /*ATIVIDADE 4:
+        //primeira etapa:
+
+        //No serviço faça uma adaptação para as regras de negócio:
+        //caso os campos não seja preenchidos, retorne um erro: {status: 400, info: 'campos obrigatórios: nome, username, email, senha', erro: 'campos obrigatórios'}
+
+        //o email deve ser unico (use o método findOne com o parâmetro where:{email: email} para verificar se o email ja existe, caso exista retorne um erro: {status: 400, info: 'email ja cadastrado', erro: 'email ja cadastrado'})
+        
+        //caso de sucesso: retorne todas as informações MENOS o hash da senha 
+        //{status: 200, info: 'usuário criado com sucesso', dados: {id, nome, username, email}}*/
+
+
+        //se todos os campos obriigatorios forem preenchidos
+        if(!nome || !nomeUsuario || !email || !senha){
+            return {status: 400, info: "campos obrigatórios: nome, username, email, senha", erro: "campos obrigatórios"}
+        }
+
+        //verificar se o email ja existe
+        const emailExiste = await Usuarios.findOne({where: {email: email}})
+
+        if(emailExiste){
+            return {status: 400, info: "email ja cadastrado", erro: "email ja cadastrado"}
+        }
+
+        //passou por todas as validações: criar usuario e retornar sucesso
+    
+
         const salt = bcrypt.genSaltSync(10)
         const senhaHash = await bcrypt.hash(senha, salt)
 
@@ -16,33 +46,34 @@ async function criarUsuario(nome, nomeUsuario, email, senha){
         senha: senhaHash
         })
         console.log(usuario)
-        //ATIVIDADE 4:
-        //primeira etapa:
-
-        //No serviço faça uma adaptação para as regras de negócio:
-        //caso os campos não seja preenchidos, retorne um erro: {status: 400, info: 'campos obrigatórios: nome, username, email, senha', erro: 'campos obrigatórios'}
-
-        //o email deve ser unico (use o método findOne com o parâmetro where:{email: email} para verificar se o email ja existe, caso exista retorne um erro: {status: 400, info: 'email ja cadastrado', erro: 'email ja cadastrado'})
-        
-        //caso de sucesso: retorne todas as informações MENOS o hash da senha 
-        //{status: 200, info: 'usuário criado com sucesso', dados: {id, nome, username, email}}
-        return {dados: usuario.dataValues}
+        return {status:200, 
+            info: "usuário criado com sucesso", 
+            dados:{
+                id: usuario.dataValues.id, 
+                nome: usuario.dataValues.nome, 
+                username: usuario.dataValues.username, 
+                email: usuario.dataValues.email
+            }
+        }
 
 
-
-
-
-
-
-        //crie uma função postUsuario que a partir dos dados recebidos no corpo da requisição, crie um novo usuário. Esse controlador deverá retornar o seguinte objeto:
+        /*segunda etapa:
+        //crie uma função postUsuario (controlador) que a partir dos dados recebidos no corpo da requisição, executar o serviço. Esse controlador deverá retornar o seguinte objeto:
         // sucesso: 200 {status: 200, info: 'usuário criado com sucesso', dados: retorno do serviço}
-        // erro: 500 {status: 500, info: 'não foi possivel criar o usuário', erro: erro.message}
+        //os erros:
+            //se retornoServico.erro == 'email ja cadastrado'
+            // erro: 400 {status: 400, info: 'emails devem ser unicos. email ja cadastrado no sistema', erro: 'email ja cadastrado'}
+
+            //se retornoServico.erro == 'campos obrigatórios'
+            // erro: 400 {status: 400, info: 'campos obrigatórios: nome, username, email, senha', erro: 'campos obrigatórios'}
+
+        // erro: 500 {status: 500, info: 'não foi possivel criar o usuário', erro: erro.message}*/
         
 
     }
     catch(error){
         console.log(error)
-        return {erro: error.message}
+        return {status: 500, info: 'não foi possivel criar o usuário', erro: error.message}
     }
 }
 
