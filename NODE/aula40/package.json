@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "express": "^5.2.1"
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.1",
+    "nodemon": "^3.1.14",
+    "sequelize": "^6.37.8"
+  },
+  "scripts": {
+    "dev": "nodemon app.js"
   }
 }

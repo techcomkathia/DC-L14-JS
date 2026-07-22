@@ -1,4 +1,4 @@
-const exemploServices = require('../2.Services/exemploServices')
+const exemploServices = require('../2.Servicos/exemploServices')
 
 async function getExemplo(req, res){
 
