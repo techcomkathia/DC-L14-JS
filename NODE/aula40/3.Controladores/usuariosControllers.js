@@ -68,8 +68,38 @@ async function getUsuarioId(req, res) {
     
 }
 
+async function postUsuario(req, res) {
+
+    const {nome,username, email, senha} = req.body
+
+    const response = await usuariosServices.criarUsuario(nome, username, email, senha)
+    
+    if(response.dados){
+        res.status(200).json({
+            status: 200,
+            dados: response.dados,
+            mensagem: 'usuario criado com sucesso'
+        })
+    }
+    else if(response.erro ){
+        res.status(400).json({
+            status: 400,
+            erro: response.erro,
+            info: response.info
+        })        
+    }  
+    else{
+        res.status(500).json({
+            status: 500,
+            erro: response.erro
+        })
+    }
+    
+}
+
 module.exports = {
     getUsuarios,
-    getUsuarioId
+    getUsuarioId,
+    postUsuario
 }
 
