@@ -1,6 +1,7 @@
 const Express = require('express')
 const exemploController = require('./3.Controladores/exemploControllers')
 const usuariosController = require('./3.Controladores/usuariosControllers')
+const UsuarioValidacao = require('./4.Middleware/validacaoUsuarioMiddleware')
 
 const app = Express()
 
@@ -13,7 +14,7 @@ app.get('/exemplo', (req, res)=> exemploController.getExemplo(req, res))
 
 app.get('/usuarios', (req, res)=> usuariosController.getUsuarios(req, res))
 
-app.post('/usuarios', (req, res)=> usuariosController.postUsuario(req, res))
+app.post('/usuarios', UsuarioValidacao, (req, res)=> usuariosController.postUsuario(req, res))
 
 app.get('/usuarios/:id', (req, res)=> usuariosController.getUsuarioId(req, res))
 
