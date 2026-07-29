@@ -2,6 +2,8 @@ const Express = require('express')
 const exemploController = require('./3.Controladores/exemploControllers')
 const usuariosController = require('./3.Controladores/usuariosControllers')
 const UsuarioValidacao = require('./4.Middleware/validacaoUsuarioMiddleware')
+const loginController = require('./3.Controladores/loginController')
+const loginValidacao = require('./4.Middleware/validacaoLoginMiddleware')
 
 const app = Express()
 
@@ -17,6 +19,8 @@ app.get('/usuarios', (req, res)=> usuariosController.getUsuarios(req, res))
 app.post('/usuarios', UsuarioValidacao, (req, res)=> usuariosController.postUsuario(req, res))
 
 app.get('/usuarios/:id', (req, res)=> usuariosController.getUsuarioId(req, res))
+
+app.post('/login', loginValidacao, (req, res)=> loginController(req, res))
 
 //DESAFIO:
 //Para as funções de "atualização de senha para um usuário e exclusão de um usuário" utilize esses arquivos produzidos na aula passada para criar os controladores que consomem esses serviços . 

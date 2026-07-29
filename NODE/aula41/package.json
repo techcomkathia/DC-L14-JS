@@ -7,6 +7,6 @@
     "sequelize": "^6.37.8"
   },
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon ./continuacao/app.js"
   }
 }
