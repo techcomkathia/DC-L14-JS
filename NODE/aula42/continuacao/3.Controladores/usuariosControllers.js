@@ -124,10 +124,44 @@ async function deleteUsuario(req, res) {
 
 }
 
+async function putUsuario(req, res) {
+    const {senha} = req.body
+    const {id} = req.params
+
+    //atualize esta função para que seja possível passar no corpo da requisição senha, nome e username.
+    //Caso o usuário passe apenas a senha, ele deve ser atualizada.
+    //Caso o usuário passe apenas o nome e/ ou username, eles devem ser atualizados.
+
+    try{
+        const response = await usuariosServices.atualizarUsuario(id, senha)
+        
+        if(response.erro){
+            return res.status(400).json({
+                status: 400,
+                erro: response.erro
+            })
+        }
+
+        return res.status(200).json({
+            status: 200,
+            mensagem: response.mensagem
+        })
+    }
+    catch(err){
+
+        return res.status(500).json({
+            status: 500,
+            erro: err.message
+        })
+    }
+
+}
+
 module.exports = {
     getUsuarios,
     getUsuarioId,
     postUsuario,
-    deleteUsuario
+    deleteUsuario,
+    putUsuario
 }
 

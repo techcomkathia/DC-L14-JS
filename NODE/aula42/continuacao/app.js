@@ -27,6 +27,8 @@ app.get('/exemplo', autenticacaoMiddleware, (req, res)=>res.json({msg: 'exemplo 
 
 app.delete('/usuarios/:id', autenticacaoMiddleware, (req, res)=> usuariosController.deleteUsuario(req, res))
 
+app.put('/usuarios/:id', autenticacaoMiddleware, (req, res)=> usuariosController.putUsuario(req, res))
+
 
 
 //crie uma rota para excluir um usuario

@@ -116,7 +116,7 @@ async function buscarUsuarioPorId(id){
 //buscarUsuarios()
 //buscarUsuarioPorId(10)
 
-async function atualizarUsuario(novoNome, id){
+/*async function atualizarUsuario(novoNome, id){
 
     try{
         const dados = await Usuarios.update({nome:novoNome},{where:{id:id}})
@@ -135,7 +135,7 @@ async function atualizarUsuario(novoNome, id){
         return {erro: error.message}
     }
     
-}
+}*/
 
 async function excluirUsuario(id){
    try{
@@ -157,7 +157,26 @@ async function excluirUsuario(id){
 }
 
 
-//
+async function atualizarUsuario(id, senha) {
+    try{
+
+        const usuario = await Usuarios.findByPk(id)
+        if(!usuario){
+            console.log('usuario nao encontrado')
+            return {erro: 'usuario nao encontrado'}
+        }
+
+        Usuarios.update({senha:bcrypt.hashSync(senha, 10)},{where:{id:id}})
+
+        console.log('usuario atualizado')
+        return {mensagem: 'usuario atualizado'}
+
+    }
+    catch(err){
+
+    }
+    
+}
 
 
 module.exports = {
