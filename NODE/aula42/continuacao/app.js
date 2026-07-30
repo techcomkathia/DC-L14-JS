@@ -4,6 +4,7 @@ const usuariosController = require('./3.Controladores/usuariosControllers')
 const UsuarioValidacao = require('./4.Middleware/validacaoUsuarioMiddleware')
 const loginController = require('./3.Controladores/loginController')
 const loginValidacao = require('./4.Middleware/validacaoLoginMiddleware')
+const autenticacaoMiddleware = require('./4.Middleware/autenticacaoMiddleware')
 
 const app = Express()
 
@@ -12,7 +13,7 @@ app.use(Express.json())
 
 
 //rotas -> controladores -> serviços -> modelo -----> banco de dados
-app.get('/exemplo', (req, res)=> exemploController.getExemplo(req, res))
+/*app.get('/exemplo', (req, res)=> exemploController.getExemplo(req, res))*/
 
 app.get('/usuarios', (req, res)=> usuariosController.getUsuarios(req, res))
 
@@ -22,14 +23,20 @@ app.get('/usuarios/:id', (req, res)=> usuariosController.getUsuarioId(req, res))
 
 app.post('/login', loginValidacao, (req, res)=> loginController(req, res))
 
-//DESAFIO:
-//Para as funções de "atualização de senha para um usuário e exclusão de um usuário" utilize esses arquivos produzidos na aula passada para criar os controladores que consomem esses serviços . 
-//Importante: nas funções é necessário fazer as validações:
-// atualização de senha: o usuario existe? a senha atual corresponde ao hash armazenado no banco de dados?
-// exclusão de um usuario: o usuario existe? 
-//crie retornos com status 200 e 400 para as funções dos serviços de atualização de senha e exclusão de um usuario
-//crie rotas para consumir os controladores putSenha e deleteUsuario
+app.get('/exemplo', autenticacaoMiddleware, (req, res)=>res.json({msg: 'exemplo autenticado'}))
 
+app.delete('/usuarios/:id', autenticacaoMiddleware, (req, res)=> usuariosController.deleteUsuario(req, res))
+
+
+
+//crie uma rota para excluir um usuario
+//crie o serviço o controlador e a rota. A rota será autenticada.
+
+
+
+//crie uma rota autenticada para atualização de senha
+//o método utilizado será o put
+//no modelo usar o metodo update.
 
 app.listen('3000', ()=>{
     console.log('Servidor rodando na porta 3000.')

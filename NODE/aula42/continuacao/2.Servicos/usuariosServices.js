@@ -137,15 +137,33 @@ async function atualizarUsuario(novoNome, id){
     
 }
 
+async function excluirUsuario(id){
+   try{
+    const usuario = await Usuarios.findByPk(id)
+    if(!usuario){
+        console.log('usuario nao encontrado')
+        return {erro: 'usuario nao encontrado'}
+    }
+    else{
+        await Usuarios.destroy({where:{id:id}})
+        console.log('usuario excluido')
+        return {mensagem: 'usuario excluido'}
+    }
+   }
+   catch(error){
+    console.log(error)
+    return {erro: error.message}
+   }
+}
 
 
-atualizarUsuario('Bartozinho', 2) //id não existe
-
+//
 
 
 module.exports = {
     criarUsuario,
     buscarUsuarios,
     buscarUsuarioPorId,
-    atualizarUsuario
+    atualizarUsuario,
+    excluirUsuario
 }

@@ -97,9 +97,37 @@ async function postUsuario(req, res) {
     
 }
 
+async function deleteUsuario(req, res) {
+
+    const dados = await usuariosServices.excluirUsuario(req.params.id)
+    if(dados.erro){
+        if(dados.erro == 'usuario nao encontrado'){
+            return res.status(400).json({
+                    status: 400,
+                erro: dados.erro
+            
+            }
+            )
+        }
+        else{
+            return res.status(500).json({
+                status: 500,
+                erro: dados.erro
+            })
+        }
+    }
+    
+        return res.status(200).json({
+            status: 200,
+            mensagem: dados.mensagem
+        })  
+
+}
+
 module.exports = {
     getUsuarios,
     getUsuarioId,
-    postUsuario
+    postUsuario,
+    deleteUsuario
 }
 
