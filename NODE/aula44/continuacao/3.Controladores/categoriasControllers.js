@@ -42,3 +42,8 @@ async function putCategoria(req, res) {
 
 module.exports = {postCategoria, putCategoria}
 
+
+//DESAFIO: Construir os middlewares para as funções de atualização de categoria e criação de categoria
+
+
+//criação das rotas para categorias, lembrando que as rotas de categorias devem ser privadas
