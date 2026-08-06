@@ -55,7 +55,72 @@ async function atualizarCategoria(dados, id) {
     
 }
 
-module.exports = {criarCtegoria, atualizarCategoria}
+async function buscarCategorias() {
+
+    try{
+
+        const categoriasEncontradas = await Categorias.findAll()
+
+        const listaCategorias = categoriasEncontradas.map((categoria) => {
+            const dadosCategoria = {
+                id: categoria.dataValues.id,
+                name: categoria.dataValues.name,
+                slug: categoria.dataValues.slug,
+                use_in_menu: categoria.dataValues.use_in_menu
+            }
+            return dadosCategoria
+        })
+
+        return {dados: listaCategorias, messagem: 'sucesso ao buscar categorias'}
+
+    }
+    catch(error){
+        return {erro: error.message}
+    }
+
+
+}
+
+async function deletarCategoria(id) {
+
+    try{    
+        //verificar se a categoria existe
+        const categoriaEncontrada = await Categorias.findByPk(id)
+        if(!categoriaEncontrada){
+            return {erro: 'categoria nao encontrada'}
+        }
+
+        await Categorias.destroy({where: {id:id}})
+        return {messagem: 'sucesso ao deletar categoria'}    
+    }
+    catch(error){
+        return {erro: error.message}
+    }
+    
+}
+
+async function buscarUmaCategoria(id) {
+
+    try {
+        const categoriaEncontrada = await Categorias.findByPk(id)
+        if(!categoriaEncontrada){
+            return {erro: 'categoria nao encontrada'}
+        }
+        return {dados: {
+            id: categoriaEncontrada.dataValues.id,
+            name: categoriaEncontrada.dataValues.name,
+            slug: categoriaEncontrada.dataValues.slug,
+            use_in_menu: categoriaEncontrada.dataValues.use_in_menu
+        }, messagem: 'sucesso ao buscar uma categoria'}
+        
+    } catch (error) {
+        return {erro: error.message}        
+    }
+
+
+}
+
+module.exports = {criarCtegoria, atualizarCategoria, buscarCategorias, buscarUmaCategoria, deletarCategoria}
 
 
 async function teste(){
