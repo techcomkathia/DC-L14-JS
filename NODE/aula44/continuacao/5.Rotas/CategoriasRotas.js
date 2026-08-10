@@ -10,7 +10,7 @@ const middlewareAutenticacao = require('../4.Middleware/autenticacaoMiddleware')
 router.post('/',middlewareAutenticacao, middlewares.validarNovaCategoria,(req, res)=>controladores.postCategoria(req,res))
 
 //put /categoria/:id (privada)
-router.put('/:id',middlewareAutenticacao, middlewares.validarAtualizacaoCategoria, (req, res)=>controladores.putCategoria(req,res))
+router.put('/:id',middlewareAutenticacao, middlewares.validarCategoriaAtualizacao, (req, res)=>controladores.putCategoria(req,res))
 
 
 //get /categoria (pública)
