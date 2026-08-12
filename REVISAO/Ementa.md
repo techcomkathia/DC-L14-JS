@@ -4,11 +4,9 @@
 
 ### 10/08
 
-- Variáveis e tipos de dados
-- Condicionais
-- Laços de repetição
-- Funções
-- Escopo
+- Condicionais (if/else if/ else e operador ternário)
+- Laços de repetição (for e for of)
+- Funções 
 - Arrays e objetos
 - Tratamento de erros
 - `try/catch`
