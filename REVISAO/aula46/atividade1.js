@@ -27,3 +27,17 @@ let pessoas = `
 
     }
 ]`
+
+let pessoasObj = JSON.parse(pessoas) //conversão de json para um array de objetos
+console.log(pessoasObj)
+
+//laço para arrays 
+// para cada um dos elementos : adicionar a eles a propriedade tipoUsuario com o valor padrao. Mostrar as informações dos objetos em uma string formatada no console obedecendo o seguinte formato
+
+for(let pessoa of pessoasObj){
+    pessoa.tipoUsuario = "padrão"
+    console.log(`Usuario de id ${pessoa.id}, ${pessoa.nome}, ${pessoa.idade} anos, email ${pessoa.email} é um usuario ${pessoa.tipoUsuario}`)
+}
+
+
+

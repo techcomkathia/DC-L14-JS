@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <form action="">
+        <input type="text" placeholder="digite algo" id="exemploInput">
+        <input type="submit" name="" id="">
+    </form> -->
+
+    <form action="" id="post">
+        <input type="text" placeholder="digite o titulo do post" id="titulo">
+        <br>
+        <textarea name="" id="mensagemPost" cols="30" rows="10"></textarea>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="infoPost"></p>
+
+    <script>
+        const form = document.querySelector('form')
+        const input = document.querySelector('#exemploInput')
+
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            if(input.value !== ''){
+             console.log(input.value)
+             input.value = '' //limpo os campos do formulário   
+            }
+            else{
+                alert('por favor preencha o campo')
+            }
+            
+
+        })
+
+
+
+    </script>
+
+
+
+    <script src="atividade4.js"></script>
+    
+</body>
+</html>
