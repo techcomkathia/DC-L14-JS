@@ -55,3 +55,57 @@ console.log(livro3.exibirDetalhes())
 //crie um metodo para "remover livro", esse metodo deverá remover um livro do array de livros irá receber o nome do livro como parametro e deverá remover o livro do array de livros
 //dica: use o metodo filter para remover o livro
 //crie um metodo para "listar livros", esse metodo deverá listar todos os livros do array de livros
+
+class Biblioteca{
+    constructor(livros=[], quantidadeLivros = 0){
+        this.livros = livros;
+        this.quantidadeLivros = this.livros.length
+    }
+
+    adicionarLivro(livro){
+        if(livro instanceof Livro){
+            this.livros.push(livro)
+            this.quantidadeLivros = this.livros.length
+            return `Livro : ${livro.titulo} adicionado com sucesso`
+        }
+        return "Livro nao adicionado. O livro deve ser uma instancia da classe Livro"
+
+    }
+
+    removerLivro(livroTitulo){
+        //verificar se livroTitulo existe no array de livros
+        if(this.livros.find(livro => livro.titulo === livroTitulo)){
+            this.livros = this.livros.filter(livro => livro.titulo !== livroTitulo)
+            this.quantidadeLivros = this.livros.length
+            return `Livro : ${livroTitulo} removido com sucesso`
+        }
+        return `Livro : ${livroTitulo} nao encontrado. Livro nao removido`
+
+       
+    }
+
+
+    listarLivros(){
+        console.log('---------------------------------------------')
+        console.log(`Listagem dos livros cadastrados na Biblioteca`)
+        this.livros.forEach(livro => {
+            console.log(livro.exibirDetalhes())
+        });
+        console.log('---------------------------------------------')
+    }
+}
+
+const biblioteca = new Biblioteca()
+
+console.log(biblioteca.adicionarLivro(livro1))
+console.log(biblioteca.adicionarLivro(livro2))
+console.log(biblioteca.adicionarLivro(livro3))
+console.log(biblioteca.removerLivro("Livro 1")) //sucesso
+console.log(biblioteca.removerLivro("Livro 4")) //falha
+console.log(biblioteca.listarLivros()) //listar 2 livros
+
+biblioteca.livros.unshift({nome: 'teste'})
+
+console.log(biblioteca.livros)
+livro1.nome = "Livro 1 modificado"
+console.log(livro1)
