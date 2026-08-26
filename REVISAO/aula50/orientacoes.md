@@ -240,3 +240,6 @@ A implementação será construída junto adicionando os atributos e métodos de
 Faça a definição das classes Pedido e Cliente 
 - Os produtos do pedido obrigatoriamente deverão ser da classe produto. 
 - Identificar quais campos obrigatoriamente deverão ser privados; 
+
+## Questão 4 
+Faça a definição das classes Produto, Bebida, Sobremesa e Hamburguer. 
