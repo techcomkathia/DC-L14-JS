@@ -243,3 +243,10 @@ Faça a definição das classes Pedido e Cliente
 
 ## Questão 4 
 Faça a definição das classes Produto, Bebida, Sobremesa e Hamburguer. 
+
+
+#### Questão 5
+Faça a definição das classes Pagamento, Pix, Dinheiro e Cartao 
+Para o método de pagamento da classe Dinheiro é necessário verificar se existe troco. Esse atributo deve ser iniciado com 0
+Os pagamentos da classe Cartão devem ter um atributo chamado tipo ( crédito ou débido)
+Caso seja crédito, pode definir as opções de parcelamento. Caso débito, será em 1x.
