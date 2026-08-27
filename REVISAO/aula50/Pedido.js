@@ -8,6 +8,15 @@ adicionarPagamento()
 finalizarPedido()
 exibirResumo()*/
 
+const Cartao = require('./Cartao');
+const Pix = require('./Pix');
+const Dinheiro = require('./Dinheiro');
+
+
+const Bebida = require('./Bebida');
+const Hamburguer = require('./Hamburguer');
+const Sobremesa = require('./Sobremesa');
+const Produto = require('./Produto');
 class Pedido {
     #numero
     #produtos
@@ -21,7 +30,7 @@ class Pedido {
 
     adicionarProduto(produto) {
         //é necessário verificar se o objeto passado é da classe Produto
-        if(!produto instanceof Produto) {
+        if(!(produto instanceof Produto) && !(produto instanceof Hamburguer) && !(produto instanceof Bebida) && !(produto instanceof Sobremesa)) {
             throw new Error('O produto precisa ser uma instância da classe Produto');
 
         }
@@ -51,7 +60,7 @@ class Pedido {
 
     adicionarPagamento(pagamento) {
         //é necessário verificar se o objeto passado é da classe Pagamento
-        if(!pagamento instanceof Pagamento) {
+        if(!(pagamento instanceof Pagamento) && !(pagamento instanceof Cartao) && !(pagamento instanceof Pix) && !(pagamento instanceof Dinheiro)) {
             throw new Error('O pagamento precisa ser uma instância da classe Pagamento');
         }
         this.pagamento = pagamento;
