@@ -30,7 +30,8 @@ class Pedido {
 
     adicionarProduto(produto) {
         //é necessário verificar se o objeto passado é da classe Produto
-        if(!(produto instanceof Produto) && !(produto instanceof Hamburguer) && !(produto instanceof Bebida) && !(produto instanceof Sobremesa)) {
+        if(!(produto instanceof Produto) && !(produto instanceof Hamburguer) && !(produto instanceof Bebida) && !(produto instanceof Sobremesa)
+        ) {
             throw new Error('O produto precisa ser uma instância da classe Produto');
 
         }
