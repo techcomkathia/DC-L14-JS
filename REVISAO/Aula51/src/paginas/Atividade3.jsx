@@ -1,0 +1,3 @@
+// Faça a organização da apolicação em múltiplas páginas: HOME, atividade 1, atividade2, página não encontrada.
+//Em TODAS AS PÁGINAS deve ser exibido um menu de navegação para as páginas que existem na aplicação. 
+//Na home, deve ser apresentado o objetivo da aplicação e cards para todas as atividades. Explicando os conceitos que foram abordados e permitindo o click para navegar para as outras páginas.

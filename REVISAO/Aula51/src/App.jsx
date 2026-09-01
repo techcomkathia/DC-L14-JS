@@ -1,9 +1,12 @@
 
 import './App.css'
-import RenderizaMudancaEstado from './componentes/RenderizaMudancaEstado'
-import RenderizacaoLista from './componentes/RenderizacaoLista'
-import Atividade1 from './componentes/Atividade1';
-import { CampoPesquisa } from './componentes/Formularios';
+
+
+import Rotas from './rotas/rotas';
+import { BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useContext, useState} from 'react'; //PERMITE USAR O CONTEXTO DENTRO DE UM COMPONENTE
+import { ContextoExemplo } from './contexto/contextoExemplo'; //objeto de contexto
 
 function App() {
 
@@ -19,28 +22,44 @@ function App() {
     { id: 6, titulo: "O Senhor dos Aneis - As Duas Torres", preco: 70, desconto: 60 },
   ];
 
+  const {info, setInfo} = useContext(ContextoExemplo);
+  const [novoNumero, setNovoNumero] = useState(0);
+
 
   return (
+
+    
+
     <>
-      <section id="center">
-        <RenderizaMudancaEstado />
-        <RenderizacaoLista lista = {[
-          {id: 1, nome: 'joao'},
-          {id: 2, nome: 'maria'},
-          {id: 3, nome: 'pedro'}
-        ]}
-          />
-        
-      </section>
+    <h1>Aula 51</h1>
+    <p>Elementos definidos fora do roteamento serão renderizados em todas as rotas da aplicação</p>
+    <p>Fora do BrowserRouter podemos definir os elementos que não dependem da navegação. Ex: banners de publicidade externa</p>
 
-      <section id="atividade1" >
-      <Atividade1 listaLivros={livros} />
-      </section>
+    <div>
+      {info.map((item) => (<p>{item}</p>))}
+    </div>
 
-      <section id="atividade2" >
-      <CampoPesquisa />
-      </section>
+    <input type="number" onChange={(e) => setNovoNumero(e.target.value)} placeholder='Digite um numero' value={novoNumero} />
+
+    <button onClick={() => setInfo([...info, novoNumero])}>Adicionar</button>
+
+    
+    
+    <BrowserRouter>
+    <p>Devemos definir todos os elementos que dependem da navegacao. Exemplo: menu de navegacao, links promocionais internos etc</p>
+    <nav>
+        <Link to="/">Home</Link>
+        <Link to="/atividade1">Atividade 1</Link>
+        <Link to="/atividade2">Atividade 2</Link>
+    </nav>
+      <Rotas />
+    </BrowserRouter>
+    
     </>
+
+
+
+
   )
 }
 
