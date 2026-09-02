@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<!--
+  SHOPLY — BASE DA ATIVIDADE
+
+  Esta é a versão HTML/CSS/JavaScript usada como ponto de partida.
+  O objetivo da atividade é migrar esta interface para React.
+
+  Os alunos devem preservar os comportamentos visuais e funcionais,
+  mas reconstruir a aplicação utilizando componentes, estado, efeitos,
+  contexto e React Router DOM.
+-->
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shoply - Loja Fictícia</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f6fa;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-indice: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #6366f1;
+    }
+
+    .carrinho {
+      background: #6366f1;
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .destaque {
+      padding: 45px 7%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+    }
+
+    .destaque h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .destaque p {
+      opacity: 0.9;
+    }
+
+    .controles {
+      padding: 25px 7%;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .controles input,
+    .controles select {
+      padding: 12px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .controles input {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .produtos-container {
+      padding: 35px 7%;
+    }
+
+    .produtos-grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .cartao-produto {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cartao-produto:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .imagem-produto-container {
+      height: 230px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .imagem-produto {
+      max-width: 100%;
+      max-height: 190px;
+      object-fit: contain;
+    }
+
+    .informacoes-produto {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .categoria-produto {
+      font-size: 12px;
+      color: #6366f1;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .titulo-produto {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .preco-produto {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: auto;
+      margin-bottom: 15px;
+    }
+
+    .botao-produto {
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: 7px;
+      background: #111827;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .botao-produto:hover {
+      background: #374151;
+    }
+
+    .mensagem-vazia {
+      text-align: center;
+      padding: 50px;
+      color: #6b7280;
+      display: none;
+    }
+
+    .carregando {
+      text-align: center;
+      padding: 50px;
+      font-size: 18px;
+      color: #6b7280;
+    }
+
+    .erro {
+      text-align: center;
+      padding: 50px;
+      color: #dc2626;
+    }
+
+    .aviso {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #16a34a;
+      color: white;
+      padding: 15px 22px;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      display: none;
+      z-indice: 100;
+    }
+
+    .aviso.show {
+      display: block;
+    }
+
+    .modal-carrinho {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-indice: 50;
+    }
+
+    .modal-carrinho.active {
+      display: flex;
+    }
+
+    .conteudo-carrinho {
+      background: white;
+      width: 90%;
+      max-width: 500px;
+      max-height: 80vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .cabecalho-carrinho {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .fechar-carrinho {
+      border: none;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .item-carrinho {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .item-carrinho img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .informacoes-item-carrinho {
+      flex: 1;
+    }
+
+    .remover-item {
+      border: none;
+      background: #ef4444;
+      color: white;
+      padding: 7px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .total-carrinho {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      .destaque {
+        padding: 35px 5%;
+      }
+
+      .destaque h1 {
+        font-size: 28px;
+      }
+
+      .controles,
+      .produtos-container {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      Shop<span>ly</span>
+    </div>
+
+    <button
+      class="carrinho"
+      id="botaoCarrinho"
+      data-testid="carrinho-button"
+    >
+      🛒 Carrinho (<span id="quantidadeCarrinho">0</span>)
+    </button>
+  </header>
+
+  <section class="destaque">
+    <h1>Encontre seu próximo produto</h1>
+    <p>Uma loja fictícia criada para praticarmos testes automatizados com Cypress.</p>
+  </section>
+
+  <section class="controles">
+
+    <input
+      type="text"
+      id="campoBusca"
+      data-testid="busca-input"
+      placeholder="🔎 Buscar produto..."
+    >
+
+    <select
+      id="seletorCategoria"
+      data-testid="categoria-select"
+    >
+      <option value="all">Todas as categorias</option>
+    </select>
+
+    <select
+      id="seletorOrdenacao"
+      data-testid="ordenacao-select"
+    >
+      <option value="default">Ordenar</option>
+      <option value="price-asc">Menor preço</option>
+      <option value="price-desc">Maior preço</option>
+      <option value="title">Nome A-Z</option>
+    </select>
+
+  </section>
+
+  <main class="produtos-container">
+
+    <div
+      id="carregando"
+      class="carregando"
+      data-testid="carregando"
+    >
+      Carregando produtos...
+    </div>
+
+    <div
+      id="produtosGrade"
+      class="produtos-grade"
+      data-testid="produtos-grade"
+    ></div>
+
+    <div
+      id="mensagemVazia"
+      class="mensagem-vazia"
+      data-testid="mensagem-vazia"
+    >
+      <h2>Nenhum produto encontrado 😕</h2>
+      <p>Tente alterar sua busca ou categoria.</p>
+    </div>
+
+  </main>
+
+  <div
+    id="aviso"
+    class="aviso"
+    data-testid="aviso"
+  >
+    Produto adicionado ao carrinho!
+  </div>
+
+  <div
+    id="modalCarrinho"
+    class="modal-carrinho"
+    data-testid="modal-carrinho"
+  >
+
+    <div class="conteudo-carrinho">
+
+      <div class="cabecalho-carrinho">
+        <h2>Meu Carrinho</h2>
+
+        <button
+          class="fechar-carrinho"
+          id="fecharCarrinho"
+          data-testid="fechar-carrinho"
+        >
+          ×
+        </button>
+      </div>
+
+      <div id="itensCarrinho"></div>
+
+      <div
+        class="total-carrinho"
+        id="totalCarrinho"
+        data-testid="total-carrinho"
+      >
+        Total: R$ 0,00
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const URL_API = "https://fakestoreapi.com/produtos";
+
+    let produtos = [];
+    let carrinho = [];
+
+    const produtosGrade = document.querySelector("#produtosGrade");
+    const carregando = document.querySelector("#carregando");
+    const mensagemVazia = document.querySelector("#mensagemVazia");
+
+    const campoBusca = document.querySelector("#campoBusca");
+    const seletorCategoria = document.querySelector("#seletorCategoria");
+    const seletorOrdenacao = document.querySelector("#seletorOrdenacao");
+
+    const botaoCarrinho = document.querySelector("#botaoCarrinho");
+    const quantidadeCarrinho = document.querySelector("#quantidadeCarrinho");
+
+    const modalCarrinho = document.querySelector("#modalCarrinho");
+    const fecharCarrinho = document.querySelector("#fecharCarrinho");
+
+    const itensCarrinho = document.querySelector("#itensCarrinho");
+    const totalCarrinho = document.querySelector("#totalCarrinho");
+
+    const aviso = document.querySelector("#aviso");
+
+    async function carregarProdutos() {
+
+      try {
+
+        carregando.style.display = "block";
+
+        const resposta = await fetch(URL_API);
+
+        if (!resposta.ok) {
+          throw new Error("Erro ao carregar produtos");
+        }
+
+        produtos = await resposta.json();
+
+        criarCategorias();
+
+        renderizarProdutos(produtos);
+
+      } catch (erro) {
+
+        produtosGrade.innerHTML = `
+          <div class="erro">
+            <h2>Ops! 😕</h2>
+            <p>Não foi possível carregar os produtos.</p>
+          </div>
+        `;
+
+      } finally {
+
+        carregando.style.display = "none";
+
+      }
+    }
+
+    function criarCategorias() {
+
+      const categories = [
+        ...new Set(produtos.map(produto => produto.categoria))
+      ];
+
+      categories.forEach(categoria => {
+
+        const option = document.createElement("option");
+
+        option.value = categoria;
+        option.textContent = categoria;
+
+        seletorCategoria.appendChild(option);
+
+      });
+    }
+
+    function renderizarProdutos(produtosParaRenderizar) {
+
+      produtosGrade.innerHTML = "";
+
+      if (produtosParaRenderizar.length === 0) {
+
+        mensagemVazia.style.display = "block";
+
+        return;
+      }
+
+      mensagemVazia.style.display = "none";
+
+      produtosParaRenderizar.forEach(produto => {
+
+        const card = document.createElement("article");
+
+        card.classList.add("cartao-produto");
+
+        card.setAttribute(
+          "data-testid",
+          "cartao-produto"
+        );
+
+        card.innerHTML = `
+
+          <div class="imagem-produto-container">
+
+            <img
+              src="${produto.image}"
+              alt="${produto.title}"
+              class="imagem-produto"
+              data-testid="imagem-produto"
+            >
+
+          </div>
+
+          <div class="informacoes-produto">
+
+            <span class="categoria-produto">
+              ${produto.categoria}
+            </span>
+
+            <h2 class="titulo-produto">
+              ${produto.title}
+            </h2>
+
+            <div class="preco-produto">
+              R$ ${produto.price.toFixed(2)}
+            </div>
+
+            <button
+              class="botao-produto"
+              data-testid="add-to-carrinho"
+              data-produto-id="${produto.id}"
+            >
+              Adicionar ao carrinho
+            </button>
+
+          </div>
+        `;
+
+        produtosGrade.appendChild(card);
+
+      });
+
+      document
+        .querySelectorAll("[data-testid='add-to-carrinho']")
+        .forEach(button => {
+
+          button.addEventListener("click", () => {
+
+            const idProduto = Number(
+              button.dataset.idProduto
+            );
+
+            adicionarAoCarrinho(idProduto);
+
+          });
+
+        });
+    }
+
+    function filtrarProdutos() {
+
+      const busca = campoBusca.value
+        .toLowerCase()
+        .trim();
+
+      const categoria = seletorCategoria.value;
+
+      let filtrados = produtos.filter(produto => {
+
+        const matchesSearch =
+          produto.title
+            .toLowerCase()
+            .includes(busca);
+
+        const matchesCategory =
+          categoria === "all" ||
+          produto.categoria === categoria;
+
+        return matchesSearch && matchesCategory;
+
+      });
+
+      filtrados = ordenarProdutos(filtrados);
+
+      renderizarProdutos(filtrados);
+    }
+
+    function ordenarProdutos(produtosParaOrdenar) {
+
+      const ordenacao = seletorOrdenacao.value;
+
+      const sorted = [...produtosParaOrdenar];
+
+      if (ordenacao === "price-asc") {
+
+        sorted.ordenacao((a, b) => a.price - b.price);
+
+      }
+
+      if (ordenacao === "price-desc") {
+
+        sorted.ordenacao((a, b) => b.price - a.price);
+
+      }
+
+      if (ordenacao === "title") {
+
+        sorted.ordenacao((a, b) =>
+          a.title.localeCompare(b.title)
+        );
+
+      }
+
+      return sorted;
+    }
+
+    function adicionarAoCarrinho(idProduto) {
+
+      const produto = produtos.find(
+        produto => produto.id === idProduto
+      );
+
+      if (!produto) return;
+
+      carrinho.push(produto);
+
+      atualizarCarrinho();
+
+      mostrarAviso();
+    }
+
+    function removerDoCarrinho(indice) {
+
+      carrinho.splice(indice, 1);
+
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+
+      quantidadeCarrinho.textContent = carrinho.length;
+
+      itensCarrinho.innerHTML = "";
+
+      if (carrinho.length === 0) {
+
+        itensCarrinho.innerHTML = `
+          <p>Seu carrinho está vazio.</p>
+        `;
+
+        totalCarrinho.textContent = "Total: R$ 0,00";
+
+        return;
+      }
+
+      let total = 0;
+
+      carrinho.forEach((produto, indice) => {
+
+        total += produto.price;
+
+        const item = document.createElement("div");
+
+        item.classList.add("item-carrinho");
+
+        item.innerHTML = `
+
+          <img src="${produto.image}" alt="${produto.title}">
+
+          <div class="informacoes-item-carrinho">
+            <strong>${produto.title}</strong>
+            <p>R$ ${produto.price.toFixed(2)}</p>
+          </div>
+
+          <button
+            class="remover-item"
+            data-testid="remover-item"
+          >
+            Remover
+          </button>
+        `;
+
+        item
+          .querySelector("[data-testid='remover-item']")
+          .addEventListener("click", () => {
+            removerDoCarrinho(indice);
+          });
+
+        itensCarrinho.appendChild(item);
+
+      });
+
+      totalCarrinho.textContent =
+        `Total: R$ ${total.toFixed(2)}`;
+    }
+
+    function mostrarAviso() {
+
+      aviso.classList.add("show");
+
+      setTimeout(() => {
+
+        aviso.classList.remove("show");
+
+      }, 2000);
+    }
+
+    campoBusca.addEventListener(
+      "input",
+      filtrarProdutos
+    );
+
+    seletorCategoria.addEventListener(
+      "change",
+      filtrarProdutos
+    );
+
+    seletorOrdenacao.addEventListener(
+      "change",
+      filtrarProdutos
+    );
+
+    botaoCarrinho.addEventListener(
+      "click",
+      () => modalCarrinho.classList.add("active")
+    );
+
+    fecharCarrinho.addEventListener(
+      "click",
+      () => modalCarrinho.classList.remove("active")
+    );
+
+    modalCarrinho.addEventListener("click", event => {
+
+      if (event.target === modalCarrinho) {
+        modalCarrinho.classList.remove("active");
+      }
+
+    });
+
+    carregarProdutos();
+
+  </script>
+
+</body>
+</html>
