@@ -99,15 +99,17 @@ Identifique as principais partes da interface e transforme-as em componentes Rea
 Algumas partes que podem virar componentes:
 
 - cabeçalho;
+- cartão de produto;
+- lista de produtos;
+- carrinho.
+
 - destaque inicial;
 - controles de busca;
 - seletor de categoria;
 - seletor de ordenação;
-- cartão de produto;
-- lista de produtos;
 - mensagem de carregamento;
 - mensagem de lista vazia;
-- carrinho.
+
 
 ### Requisitos
 
