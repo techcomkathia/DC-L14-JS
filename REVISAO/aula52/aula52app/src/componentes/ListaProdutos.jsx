@@ -1,11 +1,20 @@
-import CartaoProduto from './CartaoProduto';
+import CartaoProduto from "./CartaoProduto";
 
-export default function ListaProdutos({ produtos }) {
+function ListaProdutos({ produtos, onAdicionar }) {
   return (
-    <div className="lista-produtos">
+    <div
+      className="produtos-grade"
+      data-testid="produtos-grade"
+    >
       {produtos.map((produto) => (
-        <CartaoProduto key={produto.id} produto={produto} />
+        <CartaoProduto
+          key={produto.id}
+          produto={produto}
+          onAdicionar={onAdicionar}
+        />
       ))}
     </div>
   );
 }
+
+export default ListaProdutos;

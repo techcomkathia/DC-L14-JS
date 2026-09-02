@@ -1,3 +1,4 @@
+import ListaProdutos from "../componentes/ListaProdutos"
 export default function Produtos() {
 
   return (
