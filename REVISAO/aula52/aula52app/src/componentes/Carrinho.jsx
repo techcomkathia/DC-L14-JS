@@ -38,7 +38,7 @@ function Carrinho({ carrinho, onRemover }) {
 
               <button
                 data-testid="remover-item"
-                onClick={() => onRemover(produto.id)}
+                onClick={() => onRemover(produto)}
               >
                 Remover
               </button>

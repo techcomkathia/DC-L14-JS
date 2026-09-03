@@ -1,21 +1,9 @@
-const API_BASE_URL = 'https://api.exemplo.com';
+const API_BASE_URL = 'https://fakestoreapi.com';
 
 export async function buscarProdutos() {
-  try {
-    const response = await fetch(`${API_BASE_URL}/produtos`);
-    return await response.json();
-  } catch (erro) {
-    console.error('Erro ao buscar produtos:', erro);
-    throw erro;
-  }
-}
+// porecisa fazer um fetch para a api e retornar os dados
 
-export async function buscarProdutoPorId(id) {
-  try {
-    const response = await fetch(`${API_BASE_URL}/produtos/${id}`);
-    return await response.json();
-  } catch (erro) {
-    console.error('Erro ao buscar produto:', erro);
-    throw erro;
-  }
+ let resposta = await fetch(API_BASE_URL + '/products')
+ let produtos = await resposta.json()
+ return produtos
 }
